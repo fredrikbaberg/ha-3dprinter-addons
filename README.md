@@ -1,5 +1,5 @@
-# home-assistant-addons
-Addons for Home Assistant.
+# 3dprinter-addons
+Addons for Home-Assistant related to 3DPrinter.
 
 ## Install
 
@@ -12,4 +12,9 @@ You can use the following button to add the repository to your Home Assistant in
 
 ### 3DPrinter-OctoPrint
 
-Addon with OctoPrint
+OctoPrint, plain and simple.
+
+
+### 3DPrinter-Camera
+
+For streaming camera feed.
