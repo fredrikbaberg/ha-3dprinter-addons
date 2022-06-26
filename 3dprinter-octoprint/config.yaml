@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2022.6.010"
+version: "2022.6.011"
 slug: "3dprinter-octoprint"
 description: "New instance of OctoPrint"
 url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
@@ -18,3 +18,4 @@ schema:
   message: "str?"
 ports:
   5000/tcp: null
+ingress: true

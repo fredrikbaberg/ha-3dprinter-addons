@@ -7,7 +7,7 @@ ENV OCTOPRINT_VERSION=${OCTOPRINT_VERSION}
 # Setup path for persistent install of Python packages
 ENV PYTHONPATH=/data/python/octoprint
 ENV PYTHONUSERBASE=/data/python/octoprint
-ENV PATH=${PATH}:/data/python/octoprint/bin
+ENV PATH=/data/python/octoprint/bin:${PATH}
 
 # Install dependencies
 RUN apt update && \
