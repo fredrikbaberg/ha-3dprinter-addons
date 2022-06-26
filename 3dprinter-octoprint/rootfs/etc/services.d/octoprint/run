@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start OctoPrint
+# s6-overlay docs: https://github.com/just-containers/s6-overlay
+# ==============================================================================
+
+## Run your program
+exec octoprint serve --iknowwhatimdoing --host 0.0.0.0 --port 5000 --basedir /data/config/octoprint
