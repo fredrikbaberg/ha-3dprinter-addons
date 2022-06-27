@@ -57,6 +57,7 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
 
   # Start new profile for service
   /usr/sbin/nginx cx -> nginx,
+  
   profile nginx flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
   
@@ -69,9 +70,11 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
     /etc/passwd r,
     /dev/tty rw,
 
-    /var/log/nginx/access.log w,
-    /var/log/nginx/error.log w,
+    /etc/nginx/* rw,
 
+    /var/log/nginx/access.log rw,
+    /var/log/nginx/error.log rw,
+    
     # Allow capability CAP_CHOWN
     capability chown,
   }
