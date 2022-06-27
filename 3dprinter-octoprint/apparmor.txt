@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile example flags=(attach_disconnected,mediate_deleted) {
+profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
 
   # Capabilities
