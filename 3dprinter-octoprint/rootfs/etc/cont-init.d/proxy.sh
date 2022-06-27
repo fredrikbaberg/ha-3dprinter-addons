@@ -9,10 +9,7 @@ bashio::log.info "Proxy cont-init.d"
 ingress_entry=$(bashio::addon.ingress_entry)
 export ingress_entry=${ingress_entry}
 
-# Make sure output folder exists.
-mkdir -p /etc/nginx/http.d/
-
 tempio \
     -conf /data/options.json \
-    -template /usr/share/tempio/ingress.conf \
-    -out /etc/nginx/http.d/ingress.conf
+    -template /usr/share/tempio/ingress.cfg \
+    -out /etc/haproxy/haproxy.cfg

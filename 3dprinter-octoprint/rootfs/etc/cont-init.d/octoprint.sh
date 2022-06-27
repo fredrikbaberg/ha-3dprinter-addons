@@ -4,8 +4,6 @@
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
 
-whoami
-
 { # Check if OctoPrint is installed
     bashio::log.info "Check OctoPrint version..."
     octoprint --version
@@ -20,3 +18,4 @@ whoami
     bashio::log.info "Install OctoPrint..."
     pip install octoprint==$OCTOPRINT_VERSION
 }
+bashio::log.info "OctoPrint ready..."
