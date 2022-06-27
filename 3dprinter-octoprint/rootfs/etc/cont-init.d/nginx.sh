@@ -9,12 +9,10 @@ bashio::log.info "nginx cont-init.d"
 ingress_entry=$(bashio::addon.ingress_entry)
 export ingress_entry=${ingress_entry}
 
-
 tempio \
     -conf /data/options.json \
     -template /usr/share/tempio/ingress.conf \
     -out /etc/nginx/sites-enabled/ingress.conf
-
 
 tempio \
     -conf /data/options.json \

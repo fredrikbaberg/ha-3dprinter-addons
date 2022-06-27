@@ -27,10 +27,6 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
   # Access to options.json and other files within your addon
   /data/** rw,
 
-  # nginx
-  /var/lib/nginx/** ix,
-  /var/log/nginx/** rw,
-
   # Start new profile for service
   # /usr/bin/my_program cx -> my_program,
 
@@ -58,4 +54,25 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
   #   /etc/passwd r,
   #   /dev/tty rw,
   # }
+
+  # Start new profile for service
+  /usr/sbin/nginx cx -> nginx,
+  profile nginx flags=(attach_disconnected,mediate_deleted) {
+    #include <abstractions/base>
+  
+    # Receive signals from S6-Overlay
+    signal (receive) peer=*_example,
+  
+    /usr/sbin/nginx r,
+    /bin/bash rix,
+    /bin/echo ix,
+    /etc/passwd r,
+    /dev/tty rw,
+
+    /var/log/nginx/access.log w,
+    /var/log/nginx/error.log w,
+
+    # Allow capability CAP_CHOWN
+    capability chown,
+  }
 }
