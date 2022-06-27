@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Start OctoPrint
+# Start nginx proxy
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
 
-## Run your program
-exec octoprint serve --iknowwhatimdoing --host 0.0.0.0 --port 80 --basedir /data/config/octoprint
+bashio::log.info "Starting NGinx..."
+exec nginx

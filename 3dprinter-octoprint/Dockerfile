@@ -22,6 +22,9 @@ RUN apt update && \
     && \
     apt clean
 
+# Remove nginx default site.
+RUN rm /etc/nginx/sites-enabled/default
+
 # Copy root filesystem
 COPY rootfs /
 RUN chmod +x /etc/cont-init.d/*.sh
