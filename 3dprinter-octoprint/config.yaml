@@ -12,8 +12,6 @@ arch:
 init: false
 map:
   - share:rw
-options:
-schema:
 ports:
   5000/tcp: 5000
 ingress: true
