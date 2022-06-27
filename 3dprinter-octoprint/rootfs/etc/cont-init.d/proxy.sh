@@ -11,5 +11,5 @@ export ingress_entry=${ingress_entry}
 
 tempio \
     -conf /data/options.json \
-    -template /usr/share/tempio/ingress.cfg \
-    -out /etc/haproxy/haproxy.cfg
+    -template /usr/share/tempio/ingress.conf \
+    -out /etc/nginx/sites-enabled/ingress.conf

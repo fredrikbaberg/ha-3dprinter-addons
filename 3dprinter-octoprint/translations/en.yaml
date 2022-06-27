@@ -2,3 +2,5 @@ configuration:
   message:
     name: Message
     description: The message that will be printed to the log when starting this example add-on.
+network:
+  5000/TCP: OctoPrint port (not used for Ingress)

@@ -15,7 +15,7 @@ RUN apt update && \
         python3-venv \
         python3-dev \
         build-essential \
-        haproxy \
+        nginx \
     && \
     apt clean
 
