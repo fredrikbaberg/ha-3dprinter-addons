@@ -14,6 +14,7 @@ RUN apt update && \
     apt install -y \
         python3-venv \
         python3-dev \
+        python3-wheel \
         build-essential \
         nginx \
     && \
@@ -22,8 +23,9 @@ RUN apt update && \
     && \
     apt clean
 
-# Remove nginx default site.
+# Setup for nginx.
 RUN rm /etc/nginx/sites-enabled/default
+RUN chown -R root:root /var/log/nginx
 
 # Copy root filesystem
 COPY rootfs /
