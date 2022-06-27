@@ -17,6 +17,9 @@ RUN apt update && \
         build-essential \
         nginx \
     && \
+    apt install -y \
+        vim \
+    && \
     apt clean
 
 # Copy root filesystem
