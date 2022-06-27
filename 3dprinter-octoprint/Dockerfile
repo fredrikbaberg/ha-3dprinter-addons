@@ -15,6 +15,7 @@ RUN apt update && \
         python3-venv \
         python3-dev \
         build-essential \
+        nginx \
     && \
     apt clean
 
