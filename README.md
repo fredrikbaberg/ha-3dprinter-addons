@@ -20,6 +20,6 @@ OctoPrint, plain and simple.
 
 For streaming camera feed.
 
-## Camera-RTC
+### Camera-RTC
 
 For streaming camera feed, using WebRTC.
