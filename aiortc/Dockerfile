@@ -24,4 +24,7 @@ RUN apt update && \
 
 # Copy root filesystem
 COPY rootfs /
+
+# Make files executable
 RUN chmod +x /etc/cont-init.d/*.sh
+RUN chmod +x /etc/services.d/*/*

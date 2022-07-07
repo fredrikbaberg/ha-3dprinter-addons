@@ -1,6 +1,6 @@
 ---
 name: "3DPrinter-aiortc"
-version: "2022.7.004"
+version: "2022.7.005"
 slug: "3dprinter-aiortc"
 description: "Camera stream with support for WebRTC."
 url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/main/3dprinter-aiortc"
