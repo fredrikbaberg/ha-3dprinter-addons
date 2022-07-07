@@ -11,6 +11,7 @@ arch:
   - amd64
   - armhf
   - armv7
+stage: experimental
 init: false
 video: true
 usb: true
