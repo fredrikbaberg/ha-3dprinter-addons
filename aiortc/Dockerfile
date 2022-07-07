@@ -1,4 +1,4 @@
-ARG BUILD_FROM="ghcr.io/home-assistant/aarch64-base-debian:bullseye"
+ARG BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:bullseye"
 FROM ${BUILD_FROM}
 
 ENV PIP_FLAGS="--no-cache-dir"

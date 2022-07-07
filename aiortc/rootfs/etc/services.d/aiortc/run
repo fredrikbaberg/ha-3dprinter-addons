@@ -8,11 +8,11 @@ declare -a options
 
 bashio::log.info "Starting aiortc..."
 
-options+=(-c /data/aiortc/aiortc.conf)
+options+=$(cat /data/aiortc/aiortc.conf)
 
 # Enable debug mode
 if bashio::debug; then
-    options+=(--verbose)
+    options+=" --verbose"
 fi
 
 # Run aiortc
