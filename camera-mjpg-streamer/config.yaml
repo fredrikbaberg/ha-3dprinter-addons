@@ -18,9 +18,9 @@ init: false
 video: true
 usb: true
 ports:
-    8000/tcp: null
+    80/tcp: null
 ports_description:
-    8000/tcp: Web-based interface (Not required for Ingress)
+    80/tcp: Web-based interface (Not required for Ingress)
 options:
     mjpg_input: "input_uvc.so -n"
 schema:
