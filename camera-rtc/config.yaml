@@ -1,9 +1,8 @@
----
-name: "3DPrinter-aiortc"
-version: "2022.7.008"
-slug: "3dprinter-aiortc"
+name: "Camera-RTC"
+version: "2022.7.009"
+slug: "camera-aiortc"
 description: "Camera stream with support for WebRTC."
-url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/main/3dprinter-aiortc"
+url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/main/camera-rtc"
 ingress: true
 ingress_stream: true
 panel_icon: mdi:camera
@@ -14,11 +13,8 @@ arch:
   - armv7
   - i386
 init: false
-ports:
-  80/tcp: null
-ports_description:
-  80/tcp: Web interface (Not required for Ingress)
 video: true
+usb: true
 options:
   webrtc_arguments: ''
 schema:
