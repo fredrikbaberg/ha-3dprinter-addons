@@ -1,5 +1,5 @@
 name: "Camera-RTC"
-version: "2022.7.010"
+version: "2022.7.011"
 slug: "camera-aiortc"
 description: "Camera stream with support for WebRTC."
 url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/main/camera-rtc"
