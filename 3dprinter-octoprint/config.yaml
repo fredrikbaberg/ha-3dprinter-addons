@@ -1,7 +1,7 @@
 name: "3DPrinter-OctoPrint"
 version: "2022.6.028"
 slug: "3dprinter-octoprint"
-description: "New instance of OctoPrint"
+description: "OctoPrint as an addon, no additional bells and whistles."
 url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
 arch:
   - aarch64
@@ -16,4 +16,4 @@ map:
 ports:
   5000/tcp: 5000
 ingress: true
-image: ghcr.io/fredrikbaberg/addon-camera-aiortc-{arch}
+image: ghcr.io/fredrikbaberg/addon-3dprinter-octoprint-{arch}

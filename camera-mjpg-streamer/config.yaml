@@ -1,4 +1,4 @@
-name: "mjpg-streamer"
+name: "Camera-mjpg-streamer"
 version: "2022.7.002"
 slug: "camera-mjpg-streamer"
 description: "Camera streaming addon for Home Assistant, based on mjpg-streamer."
