@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: aiortc
+# Runs aiortc
+# ==============================================================================
+declare -a options
+
+
+bashio::log.info "Starting aiortc..."
+
+options+=(-c /data/aiortc/aiortc.conf)
+
+# Enable debug mode
+if bashio::debug; then
+    options+=(--verbose)
+fi
+
+# Run aiortc
+exec python3 /aiortc/examples/webcam/webcam.py "${options[@]}"
