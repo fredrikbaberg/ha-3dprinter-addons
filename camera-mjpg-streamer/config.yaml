@@ -1,5 +1,5 @@
 name: "mjpg-streamer"
-version: "2022.7.001"
+version: "2022.7.002"
 slug: "camera-mjpg-streamer"
 description: "Camera streaming addon for Home Assistant, based on mjpg-streamer."
 url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/main/camera-mjpg-streamer"
