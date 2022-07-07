@@ -5,12 +5,11 @@
 # ==============================================================================
 declare -a options
 
+if bashio::config.has_value 'webrtc_arguments'; then
+    options+="$(bashio::config 'webrtc_arguments')"
+fi
 
 basio::log.info "Starting aiortc with arguments: '$options'"
-
-if bashio::config.has_value 'webrtc_arguments'; then
-    options+="${bashio::config 'webrtc_arguments'}"
-fi
 
 # Run aiortc
 exec python3 /aiortc/examples/webcam/webcam.py "${options[@]}"
