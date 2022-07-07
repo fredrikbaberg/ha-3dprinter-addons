@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: aiortc
+# Runs aiortc
+# ==============================================================================
+declare -a options
+
+if bashio::config.has_value 'webrtc_arguments'; then
+    options+="$(bashio::config 'webrtc_arguments')"
+fi
+
+bashio::log.info "Starting aiortc with arguments: '$options'"
+
+# Run aiortc
+exec python3 /aiortc/examples/webcam/webcam.py "${options[@]}"
