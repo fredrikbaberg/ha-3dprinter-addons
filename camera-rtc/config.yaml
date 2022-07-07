@@ -18,4 +18,4 @@ options:
   webrtc_arguments: ''
 schema:
   webrtc_arguments: str
-image: 
+image: ghcr.io/fredrikbaberg/addon-camera-aiortc-{arch}
