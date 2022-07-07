@@ -11,7 +11,6 @@ arch:
   - amd64
   - armhf
   - armv7
-  - i386
 init: false
 video: true
 usb: true
@@ -19,3 +18,4 @@ options:
   webrtc_arguments: ''
 schema:
   webrtc_arguments: str
+image: 
