@@ -9,9 +9,11 @@ arch:
   - armhf
   - armv7
   - i386
+stage: experimental
 init: false
 map:
   - share:rw
 ports:
   5000/tcp: 5000
 ingress: true
+image: ghcr.io/fredrikbaberg/addon-camera-aiortc-{arch}

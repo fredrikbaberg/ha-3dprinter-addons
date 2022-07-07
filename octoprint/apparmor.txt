@@ -63,6 +63,9 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
   
     # Receive signals from S6-Overlay
     signal (receive) peer=*_example,
+
+    # Allow capability CAP_CHOWN
+    capability chown,
   
     /usr/sbin/nginx r,
     /bin/bash rix,
@@ -74,8 +77,6 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
 
     /var/log/nginx/access.log rw,
     /var/log/nginx/error.log rw,
-    
-    # Allow capability CAP_CHOWN
-    capability chown,
+       
   }
 }
