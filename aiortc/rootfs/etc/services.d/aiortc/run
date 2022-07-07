@@ -15,5 +15,7 @@ if bashio::debug; then
     options+=" --verbose"
 fi
 
+basio::log.info "Starting aiortc with arguments: '$options'"
+
 # Run aiortc
 exec python3 /aiortc/examples/webcam/webcam.py "${options[@]}"
