@@ -5,6 +5,8 @@ accessControl:
         - 127.0.0.0/8
         - ::1/128
         - 172.30.32.2
+api:
+    allowCrossOrigin: true
 folder:
     generated: /tmp/octoprint/generated
     timelapse_tmp: /tmp/octoprint/timelapse/tmp
