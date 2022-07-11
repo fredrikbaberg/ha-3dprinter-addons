@@ -10,5 +10,6 @@ server {
 
         proxy_pass http://backend;
         proxy_set_header X-Script-Name {{ .ingress_entry }};
+        add_header X-Forwarded-For 172.30.32.2
     }
 }
