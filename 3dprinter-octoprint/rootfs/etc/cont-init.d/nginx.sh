@@ -1,20 +1,22 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Prepare nginx proxy
-# s6-overlay docs: https://github.com/just-containers/s6-overlay
+# Add-on: 3dprinter-octoprint
+# Configures NGINX
 # ==============================================================================
 
-bashio::log.info "nginx cont-init.d"
+# Generate Ingress configuration
+bashio::var.json \
+    interface "$(bashio::addon.ip_address)" \
+    port "^$(bashio::addon.ingress_port)" \
+    | tempio \
+        -template /etc/nginx/templates/ingress.gtpl \
+        -out /etc/nginx/servers/ingress.conf
 
-ingress_entry=$(bashio::addon.ingress_entry)
-export ingress_entry=${ingress_entry}
-
-tempio \
-    -conf /data/options.json \
-    -template /usr/share/tempio/ingress.conf \
-    -out /etc/nginx/sites-enabled/ingress.conf
-
-tempio \
-    -conf /data/options.json \
-    -template /usr/share/tempio/webui.conf \
-    -out /etc/nginx/sites-enabled/webui.conf
+# Generate direct access configuration, if enabled.
+if bashio::var.has_value "$(bashio::addon.port 5000)"; then
+    bashio::var.json \
+        port "^$(bashio::addon.port 5000)" \
+        | tempio \
+            -template /etc/nginx/templates/direct.gtpl \
+            -out /etc/nginx/servers/direct.conf
+fi
