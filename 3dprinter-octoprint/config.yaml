@@ -1,12 +1,12 @@
-name: "3DPrinter-OctoPrint"
-version: "2022.7.017"
-slug: "3dprinter-octoprint"
+name: "3DPrinter-OP"
+version: "2022.7.018"
+slug: "3dprinter-op"
 description: "OctoPrint as an addon, no additional bells and whistles."
-url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
+url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-op"
 ingress: true
 ingress_stream: true
 panel_icon: mdi:printer-3d
-panel_title: 3DPrinter-OctoPrint
+panel_title: 3DPrinter-OP
 arch:
     - armv7
     - amd64
