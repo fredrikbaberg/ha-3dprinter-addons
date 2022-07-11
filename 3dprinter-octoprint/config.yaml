@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2022.7.012"
+version: "2022.7.013"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
@@ -27,4 +27,5 @@ options:
     recovery: false
 schema:
     recovery: "bool"
+image: ghcr.io/fredrikbaberg/addon-3dprinter-octoprint-{arch}
 tmpfs: true
