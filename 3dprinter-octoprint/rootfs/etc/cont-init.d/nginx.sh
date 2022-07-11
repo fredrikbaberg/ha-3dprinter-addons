@@ -14,10 +14,10 @@ bashio::var.json \
         -out /etc/nginx/servers/ingress.conf
 
 # Generate direct access configuration, if enabled.
-if bashio::var.has_value "$(bashio::addon.port 80)"; then
+if bashio::var.has_value "$(bashio::addon.port 5000)"; then
     bashio::var.json \
         interface "$(bashio::addon.ip_address)" \
-        port "^$(bashio::addon.port 80)" \
+        port "^$(bashio::addon.port 5000)" \
         | tempio \
             -template /etc/nginx/templates/direct.gtpl \
             -out /etc/nginx/servers/direct.conf
