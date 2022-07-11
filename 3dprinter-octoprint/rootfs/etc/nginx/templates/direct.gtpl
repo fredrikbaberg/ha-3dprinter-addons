@@ -1,7 +1,10 @@
 server {
     listen {{ .interface }}:{{ .port }} default_server;
 
+    include /etc/nginx/includes/server_params.conf;
+    include /etc/nginx/includes/proxy_params.conf;
+
     location / {
-        proxy_pass http://backend/;
+        proxy_pass http://octoprint/;
     }
 }
