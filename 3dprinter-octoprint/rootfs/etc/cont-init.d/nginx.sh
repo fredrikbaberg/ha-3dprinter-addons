@@ -8,6 +8,7 @@
 bashio::var.json \
     interface "$(bashio::addon.ip_address)" \
     port "^$(bashio::addon.ingress_port)" \
+    ingress_entry "$(bashio::addon.ingress_entry)" \
     | tempio \
         -template /etc/nginx/templates/ingress.gtpl \
         -out /etc/nginx/servers/ingress.conf
