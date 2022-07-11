@@ -16,6 +16,7 @@ bashio::var.json \
 # Generate direct access configuration, if enabled.
 if bashio::var.has_value "$(bashio::addon.port 80)"; then
     bashio::var.json \
+        interface "$(bashio::addon.ip_address)" \
         port "^$(bashio::addon.port 80)" \
         | tempio \
             -template /etc/nginx/templates/direct.gtpl \

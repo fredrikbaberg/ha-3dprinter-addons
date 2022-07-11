@@ -27,5 +27,4 @@ options:
     recovery: false
 schema:
     recovery: "bool"
-image: ghcr.io/fredrikbaberg/addon-3dprinter-octoprint-{arch}
 tmpfs: true
