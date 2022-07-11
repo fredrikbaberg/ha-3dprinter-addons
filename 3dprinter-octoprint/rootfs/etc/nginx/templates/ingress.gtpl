@@ -7,6 +7,9 @@ server {
     location / {
         allow   172.30.32.2;
         deny    all;
+
+        proxy_set_header X-Forwarded-For 172.30.32.2;
+        proxy_set_header Origin 172.30.32.2;
         
         proxy_pass http://octoprint/; # make sure to add trailing slash here!
         proxy_set_header Host $http_host;
@@ -19,8 +22,5 @@ server {
         proxy_http_version 1.1;
 
         client_max_body_size 0; 
-
-        proxy_set_header X-Forwarded-For 172.30.32.2;
-        proxy_set_header Origin 172.30.32.2;
     }
 }
