@@ -1,8 +1,8 @@
 server {
     listen {{ .interface }}:{{ .port }} default_server;
 
-    include /etc/nginx/includes/server_params.conf;
-    include /etc/nginx/includes/proxy_params.conf;
+    # include /etc/nginx/includes/server_params.conf;
+    # include /etc/nginx/includes/proxy_params.conf;
 
     location / {
         allow   172.30.32.2;
@@ -22,5 +22,8 @@ server {
 
         proxy_set_header X-Forwarded-For 172.30.32.2;
         add_header Origin 172.30.32.2;
+
+        # Required when mixing http and https?
+        add_header Access-Control-Allow-Origin *;
     }
 }
