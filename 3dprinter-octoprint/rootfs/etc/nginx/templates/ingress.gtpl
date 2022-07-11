@@ -32,6 +32,7 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Scheme $scheme;
+        proxy_set_header X-Script-Name {{ .ingress_entry }}/webcam;
         proxy_http_version 1.1;
         client_max_body_size 0;
     }
