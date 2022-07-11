@@ -24,3 +24,4 @@ RUN apt update && \
 COPY rootfs /
 RUN chmod +x /etc/cont-init.d/*.sh
 RUN chmod +x /etc/services.d/*/*
+RUN chmod +x /scripts/*.sh
