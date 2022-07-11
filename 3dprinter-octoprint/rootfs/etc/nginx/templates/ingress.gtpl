@@ -8,7 +8,7 @@ server {
         allow   172.30.32.2;
         deny    all;
 
-        proxy_pass http://backend;
+        proxy_pass http://backend/;
         proxy_set_header Host $http_host;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
