@@ -1,8 +1,11 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Start nginx proxy
-# s6-overlay docs: https://github.com/just-containers/s6-overlay
+# Add-on: 3dprinter-octoprint
+# Runs the Nginx daemon
 # ==============================================================================
 
+# Wait for web server to be available
+bashio::net.wait_for 5000
+
 bashio::log.info "Starting NGinx..."
-exec nginx -g 'daemon off;'
+exec nginx

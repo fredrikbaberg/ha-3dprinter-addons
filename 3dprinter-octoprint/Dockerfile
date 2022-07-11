@@ -18,14 +18,7 @@ RUN apt update && \
         build-essential \
         nginx \
     && \
-    apt install -y \
-        vim \
-    && \
     apt clean
-
-# Setup for nginx.
-RUN rm /etc/nginx/sites-enabled/default
-RUN chown -R root:root /var/log/nginx
 
 # Copy root filesystem
 COPY rootfs /
