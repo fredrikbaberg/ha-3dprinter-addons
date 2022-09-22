@@ -4,7 +4,7 @@ server {
     include /etc/nginx/includes/server_params.conf;
     include /etc/nginx/includes/proxy_params.conf;
 
-    location {{ .ingress_entry }} {
+    location / {
         allow   172.30.32.2;
         deny    all;
 
@@ -22,8 +22,8 @@ server {
         proxy_set_header X-Forwarded-Scheme $scheme;
         proxy_set_header X-Forwarded-Proto  $scheme;
 
-        # proxy_set_header X-Forwarded-For    172.30.32.2;
-        # proxy_set_header Origin 172.30.32.2;
+        proxy_set_header X-Forwarded-For    172.30.32.2;
+        proxy_set_header Origin 172.30.32.2;
     }
 
     location /webcam/ {
