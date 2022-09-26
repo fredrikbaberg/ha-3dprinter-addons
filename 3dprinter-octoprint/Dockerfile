@@ -24,6 +24,8 @@ RUN apt update && \
         # dfu-util \
         # dfu-programmer \
         # stm32flash \
+        # Development/testing
+        vim \
     && \
     apt clean
 
