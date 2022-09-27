@@ -6,6 +6,5 @@ server {
 
     location / {
         proxy_pass http://octoprint/;
-        proxy_set_header X-Forwarded-Host   $http_host;
     }
 }
