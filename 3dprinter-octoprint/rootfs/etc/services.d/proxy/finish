@@ -3,3 +3,5 @@
 # Add-on: 3dprinter-octoprint
 # Stop reverse proxy
 # ==============================================================================
+
+caddy stop
