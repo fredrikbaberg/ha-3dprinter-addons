@@ -4,6 +4,8 @@
 # Configures proxy
 # ==============================================================================
 
+mkdir -p /etc/caddy/sites-enabled
+
 # Generate Ingress configuration
 bashio::var.json \
     interface "$(bashio::addon.ip_address)" \
