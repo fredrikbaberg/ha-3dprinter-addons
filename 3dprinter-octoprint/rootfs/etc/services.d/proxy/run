@@ -10,4 +10,4 @@ bashio::net.wait_for 5000
 bashio::log.info "Starting proxy..."
 
 # exec caddy run --config /etc/caddy/Caddyfile
-XDG_CONFIG_HOME=/data/config XDG_DATA_HOME=/data/config caddy start --config /etc/caddy/Caddyfile
+exec caddy run --config /etc/caddy/Caddyfile --envfile /etc/caddy/env
