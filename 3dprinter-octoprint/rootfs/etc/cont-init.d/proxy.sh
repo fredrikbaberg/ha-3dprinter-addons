@@ -14,7 +14,7 @@ bashio::var.json \
     camera_host "$(bashio::config 'camera_url')" \
     | tempio \
         -template /usr/share/tempio/Caddyfile.ingress.gtpl \
-        -out /etc/caddy/sites-enabled/ingress
+        -out /etc/caddy/configs/ingress.caddy
 
 # Generate direct access configuration, if enabled.
 if bashio::var.has_value "$(bashio::addon.port 5000)"; then
@@ -23,5 +23,5 @@ if bashio::var.has_value "$(bashio::addon.port 5000)"; then
         port "^$(bashio::addon.port 5000)" \
         | tempio \
             -template /usr/share/tempio/Caddyfile.direct.gtpl \
-            -out /etc/caddy/sites-enabled/direct
+            -out /etc/caddy/configs/direct.caddy
 fi
