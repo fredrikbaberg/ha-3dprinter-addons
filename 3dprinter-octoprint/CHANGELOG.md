@@ -1,1 +1,2 @@
+- Fixes to Caddy XDG paths
 - Change reverse proxy from nginx to Caddy
