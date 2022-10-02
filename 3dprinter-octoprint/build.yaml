@@ -10,3 +10,4 @@ labels:
   org.opencontainers.image.source: "https://github.com/fredrikbaberg/3dprinter-addons"
 args:
   OCTOPRINT_VERSION: "1.8.4"
+  XDG_CONFIG_HOME: /data/config/
