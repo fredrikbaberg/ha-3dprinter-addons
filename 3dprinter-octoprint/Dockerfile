@@ -9,6 +9,16 @@ ENV PYTHONPATH=/data/python/octoprint
 ENV PYTHONUSERBASE=/data/python/octoprint
 ENV PATH=/data/python/octoprint/bin:${PATH}
 
+# Preparation for install of Caddy
+RUN apt install -y \
+    --no-install-recommends \
+    debian-keyring \
+    debian-archive-keyring \
+    apt-transport-https \
+    gpg \
+    && curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg \
+    && curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list
+
 # Install dependencies
 RUN apt update && \
     apt install -y \
@@ -17,7 +27,8 @@ RUN apt update && \
         python3-dev \
         python3-wheel \
         build-essential \
-        nginx \
+        caddy \
+        # nginx \
         # Extras.
         # ffmpeg \
         # avrdude \

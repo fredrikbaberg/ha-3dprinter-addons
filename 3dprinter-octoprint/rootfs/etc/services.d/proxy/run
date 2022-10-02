@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: 3dprinter-octoprint
+# Runs the reverse proxy.
+# ==============================================================================
+
+# Wait for web server to be available
+bashio::net.wait_for 5000
+
+bashio::log.info "Starting proxy..."
+
+caddy start --config /etc/caddy/Caddyfile --watch

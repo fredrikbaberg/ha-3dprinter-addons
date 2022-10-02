@@ -1,11 +1,7 @@
-#!/usr/bin/with-contenv bashio
+#!/usr/bin/execlineb -S0
 # ==============================================================================
 # Add-on: 3dprinter-octoprint
-# Runs the Nginx daemon
+# Stop reverse proxy
 # ==============================================================================
 
-# Wait for web server to be available
-bashio::net.wait_for 5000
-
-bashio::log.info "Starting NGinx..."
-exec nginx
+caddy stop
