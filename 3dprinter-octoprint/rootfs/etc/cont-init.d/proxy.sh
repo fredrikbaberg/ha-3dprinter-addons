@@ -4,7 +4,7 @@
 # Configures proxy
 # ==============================================================================
 
-mkdir -p /etc/caddy/sites-enabled
+mkdir -p /etc/caddy/configs
 
 # Generate Ingress configuration
 bashio::var.json \

@@ -9,4 +9,4 @@ bashio::net.wait_for 5000
 
 bashio::log.info "Starting proxy..."
 
-caddy start --config /etc/caddy/Caddyfile --watch
+exec caddy run --config /etc/caddy/Caddyfile
