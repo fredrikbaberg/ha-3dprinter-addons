@@ -1,1 +1,6 @@
+{
+    log {
+        format console
+    }
+}
 import configs/*.caddy
