@@ -1,2 +1,4 @@
+- Update icon to colored nozzle.
+- Cleanup Caddy config.
 - Fixes to Caddy XDG paths
 - Change reverse proxy from nginx to Caddy

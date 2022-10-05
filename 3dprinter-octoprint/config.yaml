@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2022.9.030"
+version: "2022.9.031"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
@@ -26,9 +26,9 @@ ports_description:
 options:
     camera_url: "http://b7aa59c4-camera-mjpg-streamer/"
     recovery: false
-    ssl_fix: false
+    sslFix: false
 schema:
     camera_url: "url?"
     recovery: "bool"
-    ssl_fix: "bool?"
+    sslFix: "bool?"
 tmpfs: true
