@@ -1,9 +1,20 @@
+{
+    debug
+    log {
+        format console
+        output file /var/log/caddy.log
+    }
+}
+
 :8099 {
 	@ingress {
 		remote_ip 172.30.32.2
 	}
 	uri strip_prefix {{ .ingress_entry }}
 	handle {
+		{{ if .recovery }}
+			rewrite / /recovery
+		{{ end }}
 		reverse_proxy @ingress 127.0.0.1:5000 {
 			header_up X-Script-Name {{ .ingress_entry }}
 			header_up -Origin
@@ -14,3 +25,12 @@
 		}
 	}
 }
+
+{{ if .external_port }}
+	# OctoPrint WebUI
+	:5000 {
+		reverse_proxy http://127.0.0.1:5000 {
+			header_up X-Scheme {scheme}
+		}
+	}
+{{ end }}

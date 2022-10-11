@@ -5,7 +5,7 @@
 # ==============================================================================
 
 { # Check if OctoPrint is installed.
-    octoprint --version
+    octoprint -b /data/config/octoprint --version
 } || { # Otherwise install it.
     { # Check if Python is available (at `/data/python/octoprint` according to PATH)
         python --version
@@ -15,15 +15,13 @@
         pip install wheel
     }
     pip install octoprint==$OCTOPRINT_VERSION
-    # Temporary bugfix, to be removed after 1.8.5 is released.
-    sed -i 's+//,+//g,+g' /data/python/octoprint/lib/python3.9/site-packages/octoprint/static/js/app/client/base.js 
 }
 
 # Copy OctoPrint config to persistent storage, if missing.
 if [ ! -f /data/config/octoprint/config.yaml ]; then
     if [ -f /root/config/octoprint/config.yaml ]; then
         mkdir -p /data/config/octoprint
-        # cp /root/config/octoprint/config.yaml /data/config/octoprint/config.yaml
+        cp /root/config/octoprint/config.yaml /data/config/octoprint/config.yaml
         bashio::log.notice "Default OctoPrint config copied"
     else
         bashio::log.warning "Default OctoPrint config not found"
