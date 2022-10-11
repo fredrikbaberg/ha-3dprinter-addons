@@ -7,4 +7,4 @@
 bashio::log.info "Starting OctoPrint..."
 
 ## Run your program
-exec octoprint serve --iknowwhatimdoing --host 127.0.0.1 --port 5000 --basedir /data/config/octoprint
+exec octoprint serve --iknowwhatimdoing --host 127.0.0.1 --port 80 --basedir /data/config/octoprint
