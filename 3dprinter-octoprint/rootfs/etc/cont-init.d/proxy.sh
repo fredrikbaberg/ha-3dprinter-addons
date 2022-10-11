@@ -8,7 +8,6 @@
 bashio::var.json \
     interface "$(bashio::addon.ip_address)" \
     port "^$(bashio::addon.ingress_port)" \
-    external_port "^$(bashio::addon.port 5000)" \
     ingress_entry "$(bashio::addon.ingress_entry)" \
     camera_host "$(bashio::config 'camera_url')" \
     | tempio \
