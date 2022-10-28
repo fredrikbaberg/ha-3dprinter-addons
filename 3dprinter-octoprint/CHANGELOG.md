@@ -1,4 +1,5 @@
-- Update icon to colored nozzle.
-- Cleanup Caddy config.
+- Update OctoPrint to 1.8.6
+- Update icon to coloured nozzle.
+- Clean-up Caddy config.
 - Fixes to Caddy XDG paths
 - Change reverse proxy from nginx to Caddy
