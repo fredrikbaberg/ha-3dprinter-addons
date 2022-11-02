@@ -28,7 +28,7 @@ if [ ! -f /data/config/octoprint/config.yaml ]; then
     fi
 fi
 
-# TODO: Check if user exists before setting password.
+# TODO: Check if user already exists before setting password.
 { # Make sure Ingress user for OctoPrint exists.
     bashio::log.notice "Ensure Ingress user (homeassistant) exist."
     new_password=$(date +%s | sha256sum | base64 | head -c 32 ; echo)

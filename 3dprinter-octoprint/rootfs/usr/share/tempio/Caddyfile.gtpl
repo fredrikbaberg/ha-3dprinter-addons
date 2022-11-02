@@ -15,6 +15,9 @@
 		{{ if .recovery }}
 			rewrite / /recovery
 		{{ end }}
+		{{ if .reverse_proxy_test }}
+			rewrite / /reverse_proxy_test
+		{{ end }}
 		reverse_proxy @ingress 127.0.0.1:80 {
 			header_up X-Script-Name {{ .ingress_entry }}
 			header_up -Origin

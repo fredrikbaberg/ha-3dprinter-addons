@@ -1,3 +1,4 @@
+# This file is a placeholder and will be replaced on
 {
     debug
     log {
@@ -5,4 +6,4 @@
         output file /var/log/caddy.log
     }
 }
-import configs/*.caddy
+# import configs/*.caddy
