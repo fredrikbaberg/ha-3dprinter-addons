@@ -1,0 +1,9 @@
+# This file is a placeholder and will be replaced on launch.
+{
+    debug
+    log {
+        format console
+        output file /var/log/caddy.log
+    }
+}
+# import configs/*.caddy

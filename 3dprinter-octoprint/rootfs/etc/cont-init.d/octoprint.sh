@@ -4,13 +4,15 @@
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
 
-{ # Check if OctoPrint is installed
-    octoprint --version
-} || { # Otherwise install
-    { # Check if Python is available at `/data/python/octoprint` according to PATH)
+{ # Check if OctoPrint is installed.
+    octoprint -b /data/config/octoprint --version
+} || { # Otherwise install it.
+    { # Check if Python is available (at `/data/python/octoprint` according to PATH)
         python --version
     } || { # Otherwise create Python virtual environment.
         python3 -m venv /data/python/octoprint
+        # Install wheel to speed up future installs.
+        pip install wheel
     }
     pip install octoprint==$OCTOPRINT_VERSION
 }
@@ -26,6 +28,7 @@ if [ ! -f /data/config/octoprint/config.yaml ]; then
     fi
 fi
 
+# TODO: Check if user already exists before setting password.
 { # Make sure Ingress user for OctoPrint exists.
     bashio::log.notice "Ensure Ingress user (homeassistant) exist."
     new_password=$(date +%s | sha256sum | base64 | head -c 32 ; echo)
