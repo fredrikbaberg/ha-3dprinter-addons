@@ -1,10 +1,10 @@
-# accessControl:
-#     autologinAs: homeassistant
-#     autologinLocal: true
-#     localNetworks:
-#         - 127.0.0.0/8
-#         - ::1/128
-#         - 172.30.32.2
+accessControl:
+    autologinAs: homeassistant
+    autologinLocal: true
+    localNetworks:
+        - 127.0.0.0/8
+        - ::1/128
+        # - 172.30.32.2
 api:
     allowCrossOrigin: true
 folder:
