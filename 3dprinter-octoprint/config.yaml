@@ -24,7 +24,7 @@ ports:
 ports_description:
     5000/tcp: Web-based interface (Not required for Ingress)
 options:
-    camera_url: "http://b7aa59c4-camera-mjpg-streamer/"
+    camera_url: "http://b7aa59c4-camera-mjpg-streamer"
     mode: normal
 schema:
     camera_url: "url?"
