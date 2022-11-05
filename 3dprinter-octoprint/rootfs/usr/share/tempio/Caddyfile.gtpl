@@ -11,6 +11,12 @@
 		remote_ip 172.30.32.2
 	}
 	uri strip_prefix {{ .ingress_entry }}
+
+	handle_path /camera/* {
+		reverse_proxy @ingress {{ .camera_host }} {
+		}
+	}
+
 	handle {
 		{{ if eq .mode "recovery" }}
 		rewrite / /recovery
