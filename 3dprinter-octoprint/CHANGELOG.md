@@ -1,3 +1,6 @@
+- 2022.12.0
+  - Minor updates.
+
 - 2022.11.01
   - Add reverse proxy config for camera with Ingress (untested).
   - Only create OctoPrint user if missing.
