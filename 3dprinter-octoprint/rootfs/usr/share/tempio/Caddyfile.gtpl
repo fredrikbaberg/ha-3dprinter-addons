@@ -2,7 +2,7 @@
     debug
     log {
         format console
-        output file /var/log/caddy.log
+        output file /var/log/caddy/caddy.log
     }
 }
 
