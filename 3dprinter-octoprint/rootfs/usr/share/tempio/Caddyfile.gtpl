@@ -18,12 +18,12 @@
 	}
 
 	handle {
-		{{ if eq .mode "recovery" }}
+		{{ if eq .mode "camera" }}
+		reverse_proxy @ingress {{ .camera_host }} {}
+		{{ else if eq .mode "recovery" }}
 		rewrite / /recovery
 		{{ else if eq .mode "reverse_proxy_test" }}
 		rewrite / /reverse_proxy_test
-		{{ else if eq .mode "camera" }}
-		rewrite / /camera
 		{{ end }}
 		reverse_proxy @ingress 127.0.0.1:80 {
 			header_up X-Script-Name {{ .ingress_entry }}
