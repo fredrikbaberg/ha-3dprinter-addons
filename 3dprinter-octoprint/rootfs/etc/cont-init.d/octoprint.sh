@@ -32,7 +32,6 @@ fi
     bashio::log.notice "Ensure Ingress user (homeassistant) exist."
     if ! octoprint --basedir /data/config/octoprint user list | grep -q 'homeassistant'; then
         new_password=$(date +%s | sha256sum | base64 | head -c 32 ; echo)
-        new_password=homeassistant
         octoprint --basedir /data/config/octoprint user add --password "$new_password" --admin homeassistant # 2> /dev/null
     fi
 } || { # catch
