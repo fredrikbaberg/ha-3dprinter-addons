@@ -29,7 +29,7 @@ RUN apt update \
         build-essential \
         caddy \
         # Extras.
-        # ffmpeg \
+        ffmpeg \
         # avrdude \
         # dfu-util \
         # dfu-programmer \

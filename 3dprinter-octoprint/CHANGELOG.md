@@ -1,5 +1,6 @@
-- 2022.12.0
-  - Minor updates.
+- 2022.12.01
+  - Use separate templates for Caddy Ingress/direct config.
+  - Add mode for camera (for testing).
 
 - 2022.11.01
   - Add reverse proxy config for camera with Ingress (untested).
