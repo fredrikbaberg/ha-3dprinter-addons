@@ -1,9 +1,8 @@
-# This file is a placeholder and will be replaced on launch.
+# Temporary file, will be overwritten on launch.
 {
     debug
     log {
         format console
-        output file /var/log/caddy.log
+        output file /var/log/caddy/caddy.log
     }
 }
-# import configs/*.caddy

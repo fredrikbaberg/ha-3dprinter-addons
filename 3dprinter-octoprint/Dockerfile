@@ -2,12 +2,11 @@ ARG BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:bullseye"
 FROM ${BUILD_FROM}
 ARG OCTOPRINT_VERSION="1.8.6"
 
-ENV OCTOPRINT_VERSION=${OCTOPRINT_VERSION}
-
 # Setup path for persistent install of Python packages
 ENV PYTHONPATH=/data/python/octoprint
 ENV PYTHONUSERBASE=/data/python/octoprint
 ENV PATH=/data/python/octoprint/bin:${PATH}
+ENV OCTOPRINT_VERSION=${OCTOPRINT_VERSION}
 
 # Preparation for install of Caddy
 RUN apt update \
@@ -30,7 +29,7 @@ RUN apt update \
         build-essential \
         caddy \
         # Extras.
-        # ffmpeg \
+        ffmpeg \
         # avrdude \
         # dfu-util \
         # dfu-programmer \

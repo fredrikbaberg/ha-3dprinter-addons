@@ -1,3 +1,15 @@
-# Dev
-> image: ghcr.io/fredrikbaberg/addon-3dprinter-octoprint-{arch}
+# Addon configuration
 
+## Camera URL
+
+**Note: Currently not working.**
+
+Through setting a camera URL you should be able to access the camera stream even when using Ingress.
+
+## Mode
+
+By specifying a different mode you can instead access recovery and reverse proy test page. Normally this should not be needed.
+
+# Notes etc.
+
+> image: ghcr.io/fredrikbaberg/addon-3dprinter-octoprint-{arch}

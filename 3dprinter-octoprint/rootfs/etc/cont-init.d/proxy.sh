@@ -4,7 +4,7 @@
 # Configures proxy
 # ==============================================================================
 
-# Generate proxy configuration
+# Generate proxy configuration for Ingress
 bashio::var.json \
     interface "$(bashio::addon.ip_address)" \
     port "^$(bashio::addon.ingress_port)" \
@@ -12,5 +12,5 @@ bashio::var.json \
     camera_host "$(bashio::config 'camera_url')" \
     mode "$(bashio::config 'mode')" \
     | tempio \
-        -template /usr/share/tempio/Caddyfile.gtpl \
+        -template /usr/share/tempio/caddy/Caddyfile.gtpl \
         -out /etc/caddy/Caddyfile

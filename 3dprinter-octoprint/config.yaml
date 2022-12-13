@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2022.11.0"
+version: "2022.12.01"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
@@ -24,9 +24,9 @@ ports:
 ports_description:
     5000/tcp: Web-based interface (Not required for Ingress)
 options:
-    camera_url: "http://b7aa59c4-camera-mjpg-streamer/"
+    camera_url: "http://b7aa59c4-camera-mjpg-streamer"
     mode: normal
 schema:
     camera_url: "url?"
-    mode: "list(normal|recovery|reverse_proxy_test)"
+    mode: "list(normal|recovery|reverse_proxy_test|camera)?"
 tmpfs: true
