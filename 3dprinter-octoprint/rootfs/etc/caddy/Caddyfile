@@ -1,4 +1,4 @@
-# Main Caddy configuration file. Config for Ingress/direct will be stored in subfiles.
+# Temporary file, will be overwritten on launch.
 {
     debug
     log {
@@ -6,4 +6,3 @@
         output file /var/log/caddy/caddy.log
     }
 }
-import configs/*.caddy

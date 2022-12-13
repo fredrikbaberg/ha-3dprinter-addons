@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2022.12.01"
+version: "2022.12.02"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
