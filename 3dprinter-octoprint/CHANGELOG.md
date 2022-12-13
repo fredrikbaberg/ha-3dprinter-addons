@@ -1,6 +1,6 @@
 - 2022.12.01
-  - Use separate templates for Caddy Ingress/direct config.
   - Add mode for camera (for testing).
+  - Set Caddy to trust private ranges on Ingress entry.
 
 - 2022.11.01
   - Add reverse proxy config for camera with Ingress (untested).
