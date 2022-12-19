@@ -1,9 +1,9 @@
 {
-    debug
-    log {
-        format console
-        output file /var/log/caddy/caddy.log
-    }
+	debug
+	log {
+		format console
+		output file /var/log/caddy/caddy.log
+	}
 }
 
 :8099 {
@@ -16,7 +16,6 @@
 		reverse_proxy @ingress {{ .camera_host }} {
 		}
 	}
-
 	handle {
 		{{ if eq .mode "camera" }}
 		reverse_proxy @ingress {{ .camera_host }} {
