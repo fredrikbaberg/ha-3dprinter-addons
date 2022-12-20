@@ -1,3 +1,7 @@
+- 2022.12.05
+  - Revert to OctoPrint 1.7.3.
+  - Bugfix to options.
+
 - 2022.12.04
   - Correction to name of option (trusted_proxies).
 
