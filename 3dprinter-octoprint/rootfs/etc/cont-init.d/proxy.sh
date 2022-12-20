@@ -11,6 +11,10 @@ bashio::var.json \
     ingress_entry "$(bashio::addon.ingress_entry)" \
     camera_host "$(bashio::config 'camera_url')" \
     mode "$(bashio::config 'mode')" \
+    reverse_proxy "$(bashio::config 'reverse_proxy')" \
     | tempio \
         -template /usr/share/tempio/caddy/Caddyfile.gtpl \
         -out /etc/caddy/Caddyfile
+
+# Make sure file is correctly formatted.
+caddy fmt --overwrite /etc/caddy/Caddyfile

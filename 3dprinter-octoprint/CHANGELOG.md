@@ -1,3 +1,9 @@
+- 2022.12.03
+  - Add option for trusted proxies.
+
+- 2022.12.02
+  - Use image instead of local build.
+
 - 2022.12.01
   - Add mode for camera (for testing).
   - Set Caddy to trust private ranges on Ingress entry.
