@@ -1,3 +1,6 @@
+- 2022.12.04
+  - Correction to name of option (trusted_proxies).
+
 - 2022.12.03
   - Add option for trusted proxies.
 

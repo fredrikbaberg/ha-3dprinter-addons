@@ -42,7 +42,7 @@
 :5000 {
 	reverse_proxy http://127.0.0.1:80 {
 		{{ if .trusted_proxies }}
-		trusted_proxies {{ .trusted_proxies }}
+		trusted_proxies "{{ .trusted_proxies }}"
 		{{ end }}
 	}
 }
