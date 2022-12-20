@@ -30,6 +30,6 @@ options:
 schema:
     camera_url: "url?"
     mode: "list(normal|recovery|reverse_proxy_test|camera)?"
-    reverse_proxy: "string?"
+    reverse_proxy: "str?"
 tmpfs: true
 image: ghcr.io/fredrikbaberg/addon-3dprinter-octoprint-{arch}
