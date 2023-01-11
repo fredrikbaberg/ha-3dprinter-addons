@@ -14,7 +14,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: fredrikbaberg
           type: container
-          semver-pattern: "<2022.x"
+          # semver-pattern: "<2022.x"
+          keep: 1
           names: |
             addon-3dprinter-octoprint-armv7
             addon-3dprinter-octoprint-amd64
