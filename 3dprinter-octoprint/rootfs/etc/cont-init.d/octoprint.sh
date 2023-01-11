@@ -29,8 +29,6 @@ updateConfigRequired()
     octoprint $BASEDIR config set server.commands.serverRestartCommand "/scripts/octoprint_restart.sh"
     octoprint $BASEDIR config set server.commands.systemRestartCommand "/scripts/system_restart.sh"
     octoprint $BASEDIR config set server.commands.systemShutdownCommand "/scripts/system_shutdown.sh"
-    octoprint $BASEDIR config set server.host "127.0.0.1"
-    octoprint $BASEDIR config set --int server.port 80
     octoprint $BASEDIR config set webcam.ffmpeg "/usr/bin/ffmpeg"
 }
 
