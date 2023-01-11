@@ -1,8 +1,21 @@
+# Startup
+
+Set a network port in addon settings, to be able to access the WebUI.
+
 # Addon configuration
 
 ## Trusted proxies
 
 By setting trusted proxies you should be able to use HTTPS *if you have placed a reverse proxy in front of Home Assistant*. For more information, see [Caddy documentation](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy).
+
+# OctoPrint integration
+
+You can use the OctoPrint integration with this addon. Go to Home Assistant, add integration OctoPrint, and use the following:
+- Host: `b7aa59c4-3dprinter-octoprint`
+- port: 5000
+- Don't use SSL (leave unchecked)
+
+Go to OctoPrint WebUI, you should see a request for authentication.
 
 # Camera
 
@@ -23,3 +36,5 @@ This addon drops support for Ingress. The main reason for this is issues with fi
 I have tried to find a solution to this, without success. Therefore I decided to disable the option, as it just leads to frustration.
 
 If someone is able to find a working configuration, please let me know.
+
+If you need remote access, have a look at [remote access plugins for OctoPrint](https://plugins.octoprint.org/topics/remote_access/). Remember to **NEVER** directly portforward your OctoPrint instance to the internet!
