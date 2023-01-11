@@ -11,6 +11,7 @@ jobs:
       - name: Delete old packages
         uses: SmartsquareGmbH/delete-old-packages@v0.6.0
         with:
-          semver-pattern: "<2023.x"
+          keep: 5
           names: |
+            addon-3dprinter-octoprint-armv7
             addon-3dprinter-octoprint-amd64
