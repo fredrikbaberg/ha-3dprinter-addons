@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Prepare OctoPrint
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
