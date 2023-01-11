@@ -20,12 +20,12 @@ export BASEDIR="--basedir /data/config/octoprint"
 
 
 # Update OctoPrint config with settings required for the addon to work properly (should be OK to run each time).
-updateConfigRequired()
+updateRequiredConfig()
 {
-    octoprint $BASEDIR config set --bool api.allowCrossOrigin true
+    # octoprint $BASEDIR config set --bool api.allowCrossOrigin true
     octoprint $BASEDIR config set folder.generated "/tmp/octoprint/generated"
     octoprint $BASEDIR config set folder.timelapse_tmp "/tmp/octoprint/timelapse/tmp"
-    octoprint $BASEDIR config set --bool server.allowFraming true
+    # octoprint $BASEDIR config set --bool server.allowFraming true
     octoprint $BASEDIR config set server.commands.serverRestartCommand "/scripts/octoprint_restart.sh"
     octoprint $BASEDIR config set server.commands.systemRestartCommand "/scripts/system_restart.sh"
     octoprint $BASEDIR config set server.commands.systemShutdownCommand "/scripts/system_shutdown.sh"
@@ -51,5 +51,9 @@ updateConfigRequired()
 # Create initial OctoPrint config, if missing.
 if [ ! -f /data/config/octoprint/config.yaml ]; then
     mkdir -p /data/config/octoprint
-    updateConfigRequired
 fi
+
+# Update required config for running OctoPrint properly in addon.
+updateRequiredConfig
+
+# Make sure users exists, if needed.
