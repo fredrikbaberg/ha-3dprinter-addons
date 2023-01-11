@@ -5,10 +5,9 @@
 # ==============================================================================
 
 # Generate proxy configuration for any access
-bashio::var.json \
-    | tempio \
-        -template /usr/share/tempio/caddy/Caddyfile.any.gtpl \
-        -out /etc/caddy/sites-enabled/any.caddy
+tempio \
+    -template /usr/share/tempio/caddy/Caddyfile.any.gtpl \
+    -out /etc/caddy/sites-enabled/any.caddy
 
 # Generate proxy configuration for internal access
 bashio::var.json \
