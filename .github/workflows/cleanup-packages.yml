@@ -13,6 +13,7 @@ jobs:
         with:
           token: ${{ secrets.GH_ACCESS_TOKEN }}
           type: container
+          user: fredrikbaberg
           keep: 3
           names: |
             addon-3dprinter-octoprint-armv7
