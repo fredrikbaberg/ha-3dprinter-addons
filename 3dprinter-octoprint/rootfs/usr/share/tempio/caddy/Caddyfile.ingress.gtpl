@@ -18,7 +18,7 @@
 		{{ else if eq .mode "reverse_proxy_test" }}
 		rewrite / /reverse_proxy_test
 		{{ end }}
-		reverse_proxy @ingress 127.0.0.1:5000 {
+		reverse_proxy @ingress 127.0.0.1:80 {
 			header_up X-Script-Name {{ .ingress_entry }}
 			trusted_proxies 172.30.32.2
 			# header_up -Origin
