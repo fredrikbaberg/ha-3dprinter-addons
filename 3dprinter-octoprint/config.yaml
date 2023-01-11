@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2023.01.01"
+version: "2023.01.02"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 url: "https://github.com/fredrikbaberg/home-assistant-addons/tree/main/3dprinter-octoprint"
@@ -23,13 +23,13 @@ ports:
     5000/tcp: null
 ports_description:
     5000/tcp: Web-based interface
-# options:
-#     camera_url: "http://b7aa59c4-camera-mjpg-streamer"
-#     mode: normal
-#     trusted_proxies: ""
-# schema:
-#     camera_url: "url?"
-#     mode: "list(normal|recovery|reverse_proxy_test|camera)?"
-#     trusted_proxies: "str?"
+options:
+    trusted_proxies: ""
+    # camera_url: "http://b7aa59c4-camera-mjpg-streamer"
+    # mode: normal
+schema:
+    trusted_proxies: "str?"
+    # camera_url: "url?"
+    # mode: "list(normal|recovery|reverse_proxy_test|camera)?"
 tmpfs: true
 image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-octoprint-{arch}

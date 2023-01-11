@@ -1,5 +1,0 @@
-# OctoPrint WebUI through any access (external or internal)
-:5000 {
-	reverse_proxy http://127.0.0.1:80 {
-	}
-}
