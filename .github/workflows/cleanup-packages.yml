@@ -1,5 +1,14 @@
-uses: smartsquaregmbh/delete-old-packages@v0.6.0
-with:
-  semver-pattern: "<2.x"
-  names: |
-    addon-3dprinter-octoprint-amd64
+name: cleanup-packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    steps:
+      - name: Delete old packages
+        uses: SmartsquareGmbH/delete-old-packages@v0.6.0
+        with:
+          semver-pattern: "<2.x"
+          names: |
+            addon-3dprinter-octoprint-amd64
