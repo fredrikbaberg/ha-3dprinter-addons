@@ -5,13 +5,15 @@ on:
 
 jobs:
   cleanup:
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     name: Cleanup packages
     steps:
       - name: Delete old packages
-        uses: SmartsquareGmbH/delete-old-packages@v0.6.0
+        uses: smartsquaregmbh/delete-old-packages@v0.6.0
         with:
-          keep: 5
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+          type: container
+          keep: 3
           names: |
             addon-3dprinter-octoprint-armv7
             addon-3dprinter-octoprint-amd64
