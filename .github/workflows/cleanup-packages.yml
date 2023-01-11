@@ -11,10 +11,9 @@ jobs:
       - name: Delete old packages
         uses: smartsquaregmbh/delete-old-packages@v0.6.0
         with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
-          type: container
+          token: ${{ secrets.GITHUB_TOKEN }}
           user: fredrikbaberg
-          keep: 3
+          type: container
           names: |
             addon-3dprinter-octoprint-armv7
             addon-3dprinter-octoprint-amd64
