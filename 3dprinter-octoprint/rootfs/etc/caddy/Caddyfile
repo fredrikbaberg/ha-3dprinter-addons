@@ -1,4 +1,3 @@
-# Temporary file, will be overwritten on launch.
 {
 	debug
 	log {
@@ -6,3 +5,5 @@
 		output file /var/log/caddy/caddy.log
 	}
 }
+
+import sites-enabled/*.caddy

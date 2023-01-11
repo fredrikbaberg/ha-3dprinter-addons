@@ -4,7 +4,7 @@
 # Runs the reverse proxy.
 # ==============================================================================
 
-# Wait for web server to be available
+# Wait for OctoPrint WebUI to be available
 bashio::net.wait_for 80
 
 bashio::log.info "Starting proxy..."

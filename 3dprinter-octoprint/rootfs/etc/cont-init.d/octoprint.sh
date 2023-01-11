@@ -3,11 +3,12 @@
 # Prepare OctoPrint
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
+export BASEDIR="--basedir /data/config/octoprint"
 
 { # Check if OctoPrint is installed.
-    octoprint -b /data/config/octoprint --version
+    octoprint $BASEDIR --version
 } || { # Otherwise install it.
-    { # Check if Python is available (at `/data/python/octoprint` according to PATH)
+    { # Check if Python is available (at `/data/python/octoprint`, according to PATH)
         python --version
     } || { # Otherwise create Python virtual environment.
         python3 -m venv /data/python/octoprint
@@ -17,23 +18,39 @@
     pip install octoprint==$OCTOPRINT_VERSION
 }
 
-# Copy OctoPrint config to persistent storage, if missing.
-if [ ! -f /data/config/octoprint/config.yaml ]; then
-    if [ -f /root/config/octoprint/config.yaml ]; then
-        mkdir -p /data/config/octoprint
-        cp /root/config/octoprint/config.yaml /data/config/octoprint/config.yaml
-        bashio::log.notice "Default OctoPrint config copied"
-    else
-        bashio::log.warning "Default OctoPrint config not found"
-    fi
-fi
 
-# { # Make sure Ingress user for OctoPrint exists.
-#     bashio::log.notice "Ensure Ingress user (homeassistant) exist."
-#     if ! octoprint --basedir /data/config/octoprint user list | grep -q 'homeassistant'; then
-#         new_password=$(date +%s | sha256sum | base64 | head -c 32 ; echo)
-#         octoprint --basedir /data/config/octoprint user add --password "$new_password" --admin homeassistant # 2> /dev/null
-#     fi
-# } || { # catch
-#     bashio::log.warning "Failed to ensure Ingress user exists, may not be able to launch."
-# }
+# Update OctoPrint config with settings used for the addon overall (could always be changed)
+function updateConfigRequired() {
+    octoprint $BASEDIR config set --bool api.allowCrossOrigin true
+    octoprint $BASEDIR config set folder.generated "/tmp/octoprint/generated"
+    octoprint $BASEDIR config set folder.timelapse_tmp "/tmp/octoprint/timelapse/tmp"
+    octoprint $BASEDIR config set --bool server.allowFraming true
+    octoprint $BASEDIR config set server.commands.serverRestartCommand "/scripts/octoprint_restart.sh"
+    octoprint $BASEDIR config set server.commands.systemRestartCommand "/scripts/system_restart.sh"
+    octoprint $BASEDIR config set server.commands.systemShutdownCommand "/scripts/system_shutdown.sh"
+    octoprint $BASEDIR config set server.host "127.0.0.1"
+    octoprint $BASEDIR config set --int server.port 80
+    octoprint $BASEDIR config set webcam.ffmpeg "/usr/bin/ffmpeg"
+}
+
+# Update OctoPrint config with customized settings, not strictly required for addon to work but helps with features.
+function updateConfigCustom() {
+    # Add user, if needed.
+    # { # Make sure Ingress user for OctoPrint exists.
+    #     bashio::log.notice "Ensure Ingress user (homeassistant) exist."
+    #     if ! octoprint --basedir /data/config/octoprint user list | grep -q 'homeassistant'; then
+    #         new_password=$(date +%s | sha256sum | base64 | head -c 32 ; echo)
+    #         octoprint --basedir /data/config/octoprint user add --password "$new_password" --admin homeassistant # 2> /dev/null
+    #     fi
+    # } || { # catch
+    #     bashio::log.warning "Failed to ensure Ingress user exists, may not be able to launch."
+    # }
+    # Trusted networks, access control etc.
+}
+
+
+# Create initial OctoPrint config, if missing.
+if [ ! -f /data/config/octoprint/config.yaml ]; then
+    mkdir -p /data/config/octoprint
+    updateConfigRequired
+fi
