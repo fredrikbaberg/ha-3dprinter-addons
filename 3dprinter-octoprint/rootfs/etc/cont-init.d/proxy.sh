@@ -1,8 +1,8 @@
-# #!/usr/bin/with-contenv bashio
-# # ==============================================================================
-# # Add-on: 3dprinter-octoprint
-# # Configures proxy
-# # ==============================================================================
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: 3dprinter-octoprint
+# Configures proxy
+# ==============================================================================
 
 # Generate proxy configuration for any access
 # bashio::var.json \
