@@ -5,7 +5,7 @@ on:
 
 jobs:
   cleanup:
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     name: Cleanup packages
     steps:
       - name: Delete old packages
