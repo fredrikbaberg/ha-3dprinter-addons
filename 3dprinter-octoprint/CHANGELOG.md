@@ -1,28 +1,7 @@
-- 2022.12.05
-  - Revert to OctoPrint 1.7.3.
-  - Bugfix to options.
-
-- 2022.12.04
-  - Correction to name of option (trusted_proxies).
-
-- 2022.12.03
-  - Add option for trusted proxies.
-
-- 2022.12.02
-  - Use image instead of local build.
-
-- 2022.12.01
-  - Add mode for camera (for testing).
-  - Set Caddy to trust private ranges on Ingress entry.
-
-- 2022.11.01
-  - Add reverse proxy config for camera with Ingress (untested).
-  - Only create OctoPrint user if missing.
-  - Update documentation.
-  - Mark mode optional.
-
-- Update OctoPrint to 1.8.6
-- Update icon to coloured nozzle.
-- Clean-up Caddy config.
-- Fixes to Caddy XDG paths
-- Change reverse proxy from nginx to Caddy
+## 2023.01.0
+  * Disabled Ingress
+  * Default config now set by API instead of copying a file (should make it more flexible).
+  * Using Caddy as reverse proxy.
+  * Added option to set trusted_proxies, should help with reverse proxy configuration.
+  * Updated to OctoPrint 1.8.6.
+  * Based on Debian instead of Alpine, should make more plugins compatible.

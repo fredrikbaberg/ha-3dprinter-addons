@@ -8,7 +8,7 @@ export BASEDIR="--basedir /data/config/octoprint"
 { # Check if OctoPrint is installed.
     octoprint $BASEDIR --version
 } || { # Otherwise install it.
-    { # Check if Python is available (at `/data/python/octoprint`, according to PATH)
+    { # Check if Python is available (at `/data/python/octoprint`, set by PATH in Dockerfile)
         python --version
     } || { # Otherwise create Python virtual environment.
         python3 -m venv /data/python/octoprint
@@ -18,9 +18,13 @@ export BASEDIR="--basedir /data/config/octoprint"
     pip install octoprint==$OCTOPRINT_VERSION
 }
 
+# Create initial OctoPrint config, if missing.
+if [ ! -f /data/config/octoprint/config.yaml ]; then
+    mkdir -p /data/config/octoprint
+fi
 
-# Update OctoPrint config with settings required for the addon to work properly (should be OK to run each time).
-updateRequiredConfig()
+# Update OctoPrint config with settings for the addon to behave properly.
+updateConfig()
 {
     # octoprint $BASEDIR config set --bool api.allowCrossOrigin true
     octoprint $BASEDIR config set folder.generated "/tmp/octoprint/generated"
@@ -31,7 +35,9 @@ updateRequiredConfig()
     octoprint $BASEDIR config set server.commands.systemShutdownCommand "/scripts/system_shutdown.sh"
     octoprint $BASEDIR config set webcam.ffmpeg "/usr/bin/ffmpeg"
 }
+updateConfig
 
+# Other setting changes, if needed. E.g. creating a user.
 # Update OctoPrint config with customized settings, not strictly required for addon to work but helps with features.
 # updateConfigCustom() {
     # Add user, if needed.
@@ -46,14 +52,3 @@ updateRequiredConfig()
     # }
     # Trusted networks, access control etc.
 # }
-
-
-# Create initial OctoPrint config, if missing.
-if [ ! -f /data/config/octoprint/config.yaml ]; then
-    mkdir -p /data/config/octoprint
-fi
-
-# Update required config for running OctoPrint properly in addon.
-updateRequiredConfig
-
-# Make sure users exists, if needed.
