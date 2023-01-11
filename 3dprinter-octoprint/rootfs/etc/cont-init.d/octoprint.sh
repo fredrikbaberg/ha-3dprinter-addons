@@ -19,8 +19,9 @@ export BASEDIR="--basedir /data/config/octoprint"
 }
 
 
-# Update OctoPrint config with settings used for the addon overall (could always be changed)
-updateConfigRequired() {
+# Update OctoPrint config with settings required for the addon to work properly (should be OK to run each time).
+updateConfigRequired()
+{
     octoprint $BASEDIR config set --bool api.allowCrossOrigin true
     octoprint $BASEDIR config set folder.generated "/tmp/octoprint/generated"
     octoprint $BASEDIR config set folder.timelapse_tmp "/tmp/octoprint/timelapse/tmp"
@@ -34,7 +35,7 @@ updateConfigRequired() {
 }
 
 # Update OctoPrint config with customized settings, not strictly required for addon to work but helps with features.
-updateConfigCustom() {
+# updateConfigCustom() {
     # Add user, if needed.
     # { # Make sure Ingress user for OctoPrint exists.
     #     bashio::log.notice "Ensure Ingress user (homeassistant) exist."
@@ -46,7 +47,7 @@ updateConfigCustom() {
     #     bashio::log.warning "Failed to ensure Ingress user exists, may not be able to launch."
     # }
     # Trusted networks, access control etc.
-}
+# }
 
 
 # Create initial OctoPrint config, if missing.
