@@ -1,0 +1,22 @@
+name: cleanup-packages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    name: Cleanup packages
+    steps:
+      - name: Delete old packages
+        uses: smartsquaregmbh/delete-old-packages@v0.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: fredrikbaberg
+          type: container
+          keep: 5
+          names: |
+            ha-addon-3dprinter-octoprint-aarch64
+            ha-addon-3dprinter-octoprint-amd64
+            ha-addon-3dprinter-octoprint-armhf
+            ha-addon-3dprinter-octoprint-armv7

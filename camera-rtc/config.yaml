@@ -1,0 +1,22 @@
+# name: "Camera-RTC"
+# version: "2022.7.012"
+# slug: "camera-aiortc"
+# description: "Camera stream with support for WebRTC."
+# url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/main/camera-rtc"
+# ingress: true
+# ingress_stream: true
+# panel_icon: mdi:camera
+# arch:
+#   - aarch64
+#   - amd64
+#   - armhf
+#   - armv7
+# stage: experimental
+# init: false
+# video: true
+# usb: true
+# options:
+#   webrtc_arguments: ''
+# schema:
+#   webrtc_arguments: str
+# image: ghcr.io/fredrikbaberg/addon-camera-aiortc-{arch}
