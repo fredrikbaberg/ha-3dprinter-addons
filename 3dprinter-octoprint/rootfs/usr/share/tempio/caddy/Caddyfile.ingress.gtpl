@@ -1,21 +1,20 @@
-:8099 {
+:{{ .ingress_port }} {
 	bind {{ .addon_ip }}
 	@ingress {
-		remote_ip 172.30.32.2
+		remote_ip {{ .supervisor_ip }}
 	}
 	uri strip_prefix {{ .ingress_entry }}
 	handle {
-		reverse_proxy @ingress 127.0.0.1:80 {
-			header_up X-Script-Name {{ .ingress_entry }}
-			trusted_proxies 172.30.32.2
+		reverse_proxy @ingress 127.0.0.1:80/ {
+			# header_up X-Script-Name {{ .ingress_entry }}
+			# trusted_proxies {{ .supervisor_ip }}
 		}
 	}
 }
 
-}
 # :8099 {
 # 	@ingress {
-# 		remote_ip 172.30.32.2
+# 		remote_ip {{ .supervisor_ip }}
 # 	}
 # 	uri strip_prefix {{ .ingress_entry }}
 # 
