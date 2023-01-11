@@ -5,16 +5,16 @@
 # ==============================================================================
 
 # Generate proxy configuration for any access
-tempio \
-    -template /usr/share/tempio/caddy/Caddyfile.any.gtpl \
-    -out /etc/caddy/sites-enabled/any.caddy
+# tempio \
+#     -template /usr/share/tempio/caddy/Caddyfile.any.gtpl \
+#     -out /etc/caddy/sites-enabled/any.caddy
 
-# Generate proxy configuration for internal access
-bashio::var.json \
-    addon_hostname "$(bashio::addon.hostname)" \
-    | tempio \
-        -template /usr/share/tempio/caddy/Caddyfile.internal.gtpl \
-        -out /etc/caddy/sites-enabled/internal.caddy
+# # Generate proxy configuration for internal access
+# bashio::var.json \
+#     addon_hostname "$(bashio::addon.hostname)" \
+#     | tempio \
+#         -template /usr/share/tempio/caddy/Caddyfile.internal.gtpl \
+#         -out /etc/caddy/sites-enabled/internal.caddy
 
 # Generate proxy configuration for Ingress access
 # bashio::var.json \
