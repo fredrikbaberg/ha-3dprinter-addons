@@ -109,3 +109,9 @@ jobs:
             --image "${{ steps.check.outputs.image }}" \
             --docker-hub "ghcr.io/${{ github.repository_owner }}" \
             --addon
+
+      - name: Notarize ${{ matrix.addon }}
+        uses: codenotary/cas-notarize-docker-image-bom-github-action@main
+        with:
+          asset: "${{ steps.check.outputs.image }}"
+          cas_api_key: ${{ secrets.CAS_API_KEY }}
