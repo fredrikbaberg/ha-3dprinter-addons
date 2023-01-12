@@ -1,0 +1,73 @@
+---
+# yamllint disable rule:line-length
+name: Bug Report Form
+description: Report an issue.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue form is for reporting bugs.
+
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Describe the issue you are experiencing
+      description: Provide a clear and concise description of what the bug is.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Environment
+
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: Which add-on are you reporting an issue with?
+      options:
+        - 3DPrinter-OctoPrint
+        - Camera-mjpg-streamer
+
+  - type: input
+    validations:
+      required: true
+    attributes:
+      label: What is the version of the add-on?
+
+  - type: markdown
+    attributes:
+      value: |
+        # Details
+
+  - type: textarea
+    validations:
+      required: false
+    attributes:
+      label: Steps to reproduce the issue
+      description: |
+        Please tell us exactly how to reproduce your issue.
+        Provide clear and concise step by step instructions and add code snippets if needed.
+      value: |
+        1.
+        2.
+        3.
+        ...
+
+  - type: textarea
+    attributes:
+      label: Anything in the add-on logs that might be useful?
+      description: >
+        Addon Logs can be found in [Settings -> System -> Logs](https://my.home-assistant.io/redirect/logs/)
+        then choose the add-on in the top right.
+
+        [![Open your Home Assistant instance and show your Home Assistant logs.](https://my.home-assistant.io/badges/logs.svg)](https://my.home-assistant.io/redirect/logs/)
+      render: txt
+
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: >
+        If you have any additional information for us, use the field below.
+        Please note, you can attach screenshots or screen recordings here, by
+        dragging and dropping files in the field below.
