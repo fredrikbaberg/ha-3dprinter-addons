@@ -11,14 +11,6 @@ RUN apk add --no-cache \
         libffi-dev \
         build-base \
         curl-dev
-    # && git clone https://github.com/KevinOConnor/klipper \
-    # && git clone https://github.com/Arksine/moonraker.git
-
-# RUN virtualenv klippy-env \    
-#     && ./klippy-env/bin/pip install -r ./klipper/scripts/klippy-requirements.txt
-
-# RUN virtualenv moonraker-env \
-#     && ./moonraker-env/bin/pip install -r ./moonraker/scripts/moonraker-requirements.txt
 
 COPY rootfs /
 RUN chmod +x /etc/cont-init.d/*.sh

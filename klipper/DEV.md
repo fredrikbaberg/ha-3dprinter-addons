@@ -7,7 +7,7 @@ Need a frontend:
 - Mainsail ( + Moonraker )
 - Fluidd ( + Moonraker )
 
-Both Klipper and OctoPrint/Mainsail/Fluidd needs access to klipper_config printer.cfg folder.
+Both Klipper and OctoPrint/Moonraker needs access to klipper_config (printer.cfg) folder.
 
 ## Ideas
 

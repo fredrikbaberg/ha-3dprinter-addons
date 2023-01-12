@@ -1,5 +1,5 @@
 name: "3DPrinter-Klipper"
-version: "2023.01.0"
+version: "2023.01.01"
 slug: "3dprinter-klipper"
 description: "Klipper as an addon."
 url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/klipper/3dprinter-klipper"
@@ -15,3 +15,7 @@ realtime: true
 gpio: true
 uart: true
 usb: true
+ports:
+    7125/tcp: null
+ports_description:
+    7125/tcp: Moonraker API
