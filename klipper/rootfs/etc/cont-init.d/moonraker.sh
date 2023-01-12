@@ -9,6 +9,8 @@ if [ ! -d /data/moonraker-env ]; then
     /data/moonraker-env/bin/pip install -r /data/moonraker/scripts/moonraker-requirements.txt
 fi
 
+mkdir -p /data/klipper_config
+
 if [ ! -f /data/klipper_config/moonraker.conf ]; then
     cp /usr/share/templates/moonraker.conf /data/klipper_config/moonraker.conf
 fi

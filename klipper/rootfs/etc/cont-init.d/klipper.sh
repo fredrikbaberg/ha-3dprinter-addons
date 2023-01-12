@@ -8,3 +8,5 @@ if [ ! -d /data/klippy-env ]; then
     virtualenv /data/klippy-env
     /data/klippy-env/bin/pip install -r /data/klipper/scripts/klippy-requirements.txt
 fi
+
+mkdir -p /data/klipper_config

@@ -1,5 +1,5 @@
 name: "3DPrinter-Klipper"
-version: "2023.01.01"
+version: "2023.01.02"
 slug: "3dprinter-klipper"
 description: "Klipper as an addon."
 url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/klipper/3dprinter-klipper"
