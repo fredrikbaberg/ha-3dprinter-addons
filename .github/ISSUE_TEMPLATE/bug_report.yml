@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 name: Bug Report Form
-description: Report an issue.
+description: Report an issue with an add-on.
 body:
   - type: markdown
     attributes:
