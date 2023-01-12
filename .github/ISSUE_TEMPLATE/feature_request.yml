@@ -1,12 +1,22 @@
 ---
 # yamllint disable rule:line-length
 name: Feature Request Form
-description: Make a feature request.
+description: Make a feature request / suggestion.
 body:
   - type: markdown
     attributes:
       value: |
         This form is for asking for feature requests.
+
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: If this relates to an existing add-on, please select which one.
+      options:
+        - Other
+        - 3DPrinter-OctoPrint
+        - Camera-mjpg-streamer
 
   - type: textarea
     validations:
@@ -19,18 +29,3 @@ body:
     attributes:
       value: |
         ## Environment
-
-  - type: dropdown
-    validations:
-      required: true
-    attributes:
-      label: Select the add-on this feature request is related to. If none, select "Other".
-      options:
-        - 3DPrinter-OctoPrint
-        - Camera-mjpg-streamer
-        - Other
-
-  - type: markdown
-    attributes:
-      value: |
-        # Details
