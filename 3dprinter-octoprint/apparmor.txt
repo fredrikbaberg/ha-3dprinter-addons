@@ -1,12 +1,12 @@
 #include <tunables/global>
 
-profile 3DPrinter-OctoPrint flags=(attach_disconnected,mediate_deleted,complain) {
+profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
-
+  
   # Capabilities
   file,
   signal (send) set=(kill,term,int,hup,cont),
-
+  
   # S6-Overlay
   /init ix,
   /bin/** ix,
@@ -19,11 +19,25 @@ profile 3DPrinter-OctoPrint flags=(attach_disconnected,mediate_deleted,complain)
   /etc/cont-finish.d/** rwix,
   /run/{,**} rwk,
   /dev/tty rw,
-
+  
   # Bashio
   /usr/lib/bashio/** ix,
   /tmp/** rwk,
-
+  
   # Access to options.json and other files within your addon
   /data/** rw,
+  
+  # Start new profile for service
+  /usr/bin/caddy cx -> caddy,
+  
+  profile caddy flags=(attach_disconnected,mediate_deleted) {
+    #include <abstractions/base>
+  
+    # Receive signals from S6-Overlay
+    signal (receive) peer=*_3dprinter-octoprint,
+  
+    capability dac_override {
+      /var/log/nginx* rw,
+    }
+  }
 }
