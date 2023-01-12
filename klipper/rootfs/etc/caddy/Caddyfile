@@ -1,0 +1,4 @@
+:8099 {
+    root * /data/mainsail
+    file_server
+}
