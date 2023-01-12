@@ -1,5 +1,5 @@
 name: "3DPrinter-Klipper"
-version: "2023.01.02"
+version: "2023.01.03"
 slug: "3dprinter-klipper"
 description: "Klipper as an addon."
 url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/klipper/3dprinter-klipper"
@@ -10,6 +10,7 @@ arch:
     - aarch64
     - i386
 stage: experimental
+ingress: true
 init: false
 realtime: true
 gpio: true

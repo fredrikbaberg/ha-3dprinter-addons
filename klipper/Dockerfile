@@ -10,7 +10,8 @@ RUN apk add --no-cache \
         python3-dev \
         libffi-dev \
         build-base \
-        curl-dev
+        curl-dev \
+        caddy
 
 COPY rootfs /
 RUN chmod +x /etc/cont-init.d/*.sh
