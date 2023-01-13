@@ -2,7 +2,7 @@ name: "Camera-mjpg-streamer"
 version: "2022.7.0"
 slug: "camera-mjpg-streamer"
 description: "Camera streaming addon for Home Assistant, based on mjpg-streamer."
-url: "https://github.com/fredrikbaberg/3dprinter-addons/tree/main/camera-mjpg-streamer"
+url: "https://github.com/fredrikbaberg/ha-3dprinter-addons/tree/main/camera-mjpg-streamer"
 ingress: true
 ingress_stream: true
 panel_icon: mdi:camera
@@ -25,4 +25,4 @@ options:
     mjpg_input: "input_uvc.so -n"
 schema:
     mjpg_input: "str"
-image: ghcr.io/fredrikbaberg/addon-camera-mjpg-streamer-{arch}
+image: ghcr.io/fredrikbaberg/ha-addon-camera-mjpg-streamer-{arch}
