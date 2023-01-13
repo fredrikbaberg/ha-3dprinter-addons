@@ -14,7 +14,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: fredrikbaberg
           type: container
-          keep: 5
+          keep: 1
           names: |
             ha-addon-3dprinter-octoprint-aarch64
             ha-addon-3dprinter-octoprint-amd64

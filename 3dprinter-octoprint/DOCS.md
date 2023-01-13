@@ -11,7 +11,7 @@ By setting trusted proxies you should be able to use HTTPS *if you have placed a
 # OctoPrint integration
 
 You can use the OctoPrint integration with this addon. Go to Home Assistant, add integration OctoPrint, and use the following:
-- Host: `b7aa59c4-3dprinter-octoprint`
+- Host: `cce6f2d5-3dprinter-octoprint`
 - port: 5000
 - Don't use SSL (leave unchecked)
 
@@ -22,7 +22,7 @@ Go to OctoPrint WebUI, you should see a request for authentication.
 There is no camera server in the addon, it has to be setup separately.
 
 You could, for instance, use the addon [camera-mjpg-streamer](https://github.com/fredrikbaberg/3dprinter-addons/tree/main/camera-mjpg-streamer) available in the same repository. If so, you can set the snapshot URL to:
-> `http://b7aa59c4-camera-mjpg-streamer/?action=snapshot`.
+> `http://cce6f2d5-camera-mjpg-streamer/?action=snapshot`.
 
 Note that this method **only allows for snapshot**, it does **NOT** work for camera stream as this requires the browser/app used to directly access the stream.
 
