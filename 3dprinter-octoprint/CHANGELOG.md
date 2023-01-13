@@ -1,3 +1,7 @@
+## 2023.01.1
+  * Add AppArmor profile
+  * Add support for GPIO
+
 ## 2023.01.0
   * Update to OctoPrint 1.8.6.
   * Disabled Ingress.

@@ -37,7 +37,7 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
     signal (receive) peer=*_3dprinter-octoprint,
   
     capability dac_override {
-      # /var/log/nginx* rw,
+      /etc/caddy/** rw,
     }
   }
 }
