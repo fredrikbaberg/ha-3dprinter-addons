@@ -18,7 +18,7 @@ devices:
 #   - "/dev/gpiomem"
 privileged:
   - SYS_RAWIO
-apparmor: false
+# apparmor: false
 gpio: true
 usb: true
 uart: true
