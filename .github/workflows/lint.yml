@@ -1,54 +1,41 @@
----
-# yamllint disable rule:truthy
 name: Lint
 
-env:
-  HADOLINT_VERSION: v1.17.2
-  SHELLCHECK_OPTS: -e SC1008 -s bash
-
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
-  hadolint:
+  find:
+    name: Find add-ons
     runs-on: ubuntu-latest
-    name: hadolint
+    outputs:
+      addons: ${{ steps.addons.outputs.addons_list }}
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v3
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3.3.0
 
-      - name: Run linter
-        id: changed_files
-        run: |
-          shopt -s globstar
-          for dockerfile in **/Dockerfile; do
-            echo "Linting: $dockerfile"
-            docker run --rm -i \
-              -v $(pwd)/.hadolint.yaml:/.hadolint.yaml:ro \
-              hadolint/hadolint:${{ env.HADOLINT_VERSION }} < "$dockerfile"
-          done
+      - name: 🔍 Find add-on directories
+        id: addons
+        uses: home-assistant/actions/helpers/find-addons@master
 
-  yamllint:
+  lint:
+    name: Lint add-on ${{ matrix.path }}
     runs-on: ubuntu-latest
-    name: YAMLLint
+    needs: find
+    strategy:
+      matrix:
+        path: ${{ fromJson(needs.find.outputs.addons) }}
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v3
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3.3.0
 
-      - name: Run YAMLLint
-        uses: frenck/action-yamllint@v1.3
-
-  shellcheck:
-    runs-on: ubuntu-latest
-    name: ShellCheck
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v3
-
-      - name: Run linter
-        uses: ludeeus/action-shellcheck@1.1.0
+      - name: 🚀 Run Home Assistant Add-on Lint
+        uses: frenck/action-addon-linter@v2.10
+        with:
+          path: "./${{ matrix.path }}"
