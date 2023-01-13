@@ -36,8 +36,6 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
     # Receive signals from S6-Overlay
     signal (receive) peer=*_3dprinter-octoprint,
   
-    capability dac_override {
-      /etc/caddy/** rw,
-    }
+    capability dac_override,
   }
 }
