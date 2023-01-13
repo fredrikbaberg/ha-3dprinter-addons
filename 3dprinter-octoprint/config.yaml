@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2023.01.1"
+version: "2023.01.2"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 arch:
@@ -18,7 +18,7 @@ devices:
 #   - "/dev/gpiomem"
 privileged:
   - SYS_RAWIO
-apparmor: true
+apparmor: false
 gpio: true
 usb: true
 uart: true

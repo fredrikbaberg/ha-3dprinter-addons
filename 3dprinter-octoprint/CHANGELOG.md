@@ -1,3 +1,6 @@
+## 2023.01.2
+  * Disable AppArmor profile.
+
 ## 2023.01.1
   * Add AppArmor profile
   * Add support for GPIO
