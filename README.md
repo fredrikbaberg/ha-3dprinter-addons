@@ -10,8 +10,6 @@ You can use the following button to add the repository to your Home Assistant in
 
 ## Addons
 
-Not all addons are ready for use.
-
 ### 3DPrinter-OctoPrint
 
 OctoPrint, plain and simple.
