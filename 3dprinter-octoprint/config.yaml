@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2023.01.3-RC0"
+version: "2023.01.3-RC1"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 arch:
@@ -31,7 +31,7 @@ schema:
   trusted_proxies: "str?"
   # camera_url: "url?"
   # mode: "list(normal|recovery|reverse_proxy_test|camera)?"
-  socat_target: "url?"
+  socat_target: "str?"
 image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-octoprint-{arch}
 # codenotary:
 tmpfs: true
