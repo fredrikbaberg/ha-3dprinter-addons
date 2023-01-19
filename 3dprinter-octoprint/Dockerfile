@@ -34,6 +34,7 @@ RUN apt update \
         # dfu-util \
         # dfu-programmer \
         # stm32flash \
+        socat \
         # Development/testing
         vim \
     && \

@@ -1,3 +1,6 @@
+## 2023.01.3
+  * Add `socat`
+
 ## 2023.01.2
   * Disable AppArmor profile.
 

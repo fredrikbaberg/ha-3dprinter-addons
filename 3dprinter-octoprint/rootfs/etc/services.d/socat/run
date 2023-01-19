@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: 3dprinter-octoprint
+# Runs socat
+# ==============================================================================
+
+bashio::log.info "Starting socat..."
+
+exec socat pty,wait-slave,link=/dev/ttyACM0 tcp:%(ENV_SOCAT_TARGET)s
