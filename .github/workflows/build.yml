@@ -30,10 +30,7 @@ jobs:
         # uses: jitterbit/get-changed-files@v1
         uses: masesgroup/retrieve-changed-files@v2
         with:
-          # Format of the steps output context.
-          # Can be 'space-delimited', 'csv', or 'json'.
-          # Default: 'space-delimited'
-          format: ''
+          format: 'space-delimited'
 
       - name: Find add-on directories
         id: addons
