@@ -27,7 +27,13 @@ jobs:
 
       - name: Get changed files
         id: changed_files
-        uses: jitterbit/get-changed-files@v1
+        # uses: jitterbit/get-changed-files@v1
+        uses: masesgroup/retrieve-changed-files@v2
+        with:
+          # Format of the steps output context.
+          # Can be 'space-delimited', 'csv', or 'json'.
+          # Default: 'space-delimited'
+          format: ''
 
       - name: Find add-on directories
         id: addons
