@@ -4,6 +4,6 @@
 # Runs ser2net
 # ==============================================================================
 
-bashio::log.info "Starting mjpg-streamer.."
+bashio::log.info "Starting ser2net.."
 
 exec ser2net -d
