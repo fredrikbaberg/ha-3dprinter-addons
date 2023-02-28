@@ -30,10 +30,10 @@ RUN apt update \
         caddy \
         # Extras.
         ffmpeg \
-        # avrdude \
-        # dfu-util \
-        # dfu-programmer \
-        # stm32flash \
+        avrdude \
+        dfu-util \
+        dfu-programmer \
+        stm32flash \
         # Development/testing
         vim \
     && \

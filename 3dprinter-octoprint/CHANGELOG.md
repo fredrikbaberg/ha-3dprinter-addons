@@ -1,3 +1,6 @@
+## 2023.02.0
+  * Add binaries for flashing firmware to printer (avrdude, dfu-util, dfu-programmer, stm32flash).
+
 ## 2023.01.2
   * Disable AppArmor profile.
 
