@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2023.01.2"
+version: "2023.02.0"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 arch:
