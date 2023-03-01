@@ -1,0 +1,29 @@
+name: "3DPrinter-Remote"
+version: "2023.03.0"
+slug: "3dprinter-remote"
+description: "Add-on for accessing 3DPrinter remotely using socat"
+url: "https://github.com/fredrikbaberg/ha-3dprinter-addons/tree/main/3dprinter-remote"
+arch:
+    - armv7
+    - amd64
+    - armhf
+    - aarch64
+    - i386
+stage: experimental
+init: false
+gpio: true
+usb: true
+uart: true
+ports:
+    9999/tcp: 9999
+ports_description:
+    9999/tcp: Port for access to ser2net
+options:
+    printer_path: "/dev/null"
+    printer_baudrate: "115200"
+    ser2net_args: ""
+schema:
+    printer_path: "str"
+    printer_baudrate: "int"
+    ser2net_args: "str?"
+image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-remote-{arch}
