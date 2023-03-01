@@ -11,7 +11,7 @@ By setting trusted proxies you should be able to use HTTPS *if you have placed a
 # OctoPrint integration
 
 You can use the OctoPrint integration with this addon. Go to Home Assistant, add integration OctoPrint, and use the following:
-- Host: `cce6f2d5-3dprinter-octoprint`
+- Host: `cce6f2d5-3dprinter-octoprint` (use the add-on hostname, the first part could differ).
 - port: 5000
 - Don't use SSL (leave unchecked)
 

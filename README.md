@@ -14,6 +14,10 @@ You can use the following button to add the repository to your Home Assistant in
 
 OctoPrint, plain and simple.
 
+### 3DPrinter-Remote
+
+Run OctoPrint on a different machine from the printer.
+
 ### Camera-mjpg-streamer
 
-For streaming camera feed.
+Stream from camera.
