@@ -1,5 +1,5 @@
 name: "3DPrinter-OctoPrint"
-version: "2023.02.0"
+version: "2023.02.1"
 slug: "3dprinter-octoprint"
 description: "OctoPrint as an addon, no additional bells and whistles."
 arch:
@@ -14,10 +14,12 @@ ports:
 ports_description:
   5000/tcp: Web-based interface
 devices:
-  - "/dev/mem"
-#   - "/dev/gpiomem"
-privileged:
-  - SYS_RAWIO
+  - "/dev/i2c-0"
+  - "/dev/i2c-1"
+# - "/dev/mem"
+# - "/dev/gpiomem"
+# privileged:
+#   - SYS_RAWIO
 # apparmor: false
 gpio: true
 usb: true
@@ -30,7 +32,7 @@ schema:
   trusted_proxies: "str?"
   # camera_url: "url?"
   # mode: "list(normal|recovery|reverse_proxy_test|camera)?"
-image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-octoprint-{arch}
+# image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-octoprint-{arch}
 # codenotary:
 tmpfs: true
 # ingress: false
@@ -39,4 +41,4 @@ panel_icon: mdi:printer-3d
 panel_title: 3DPrinter-OctoPrint
 stage: experimental
 init: false
-realtime: true
+# realtime: true
