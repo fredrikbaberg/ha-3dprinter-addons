@@ -32,20 +32,26 @@ profile 3dprinter-octoprint flags=(attach_disconnected,mediate_deleted) {
   
   profile caddy flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
-  
+
     # Receive signals from S6-Overlay
     signal (receive) peer=*_3dprinter-octoprint,
 
     capability dac_override,
 
+    owner /usr/bin/caddy rm,
+    @{HOME}/.step/ w,
     @{PROC}/*/cpuset r,
     @{PROC}/sys/net/** r,
-    /data/config/caddy/** rw,
+
     /etc/** r,
-    /etc/caddy/** rw,
-    /sys/devices/virtual/** r,
-    /usr/bin/caddy rm,
-    /var/log/** rw,
-    @{HOME}/.step/ w,
+    owner /etc/caddy/ kwr,
+    owner /etc/caddy/** kwrml,
+
+    /var/log/caddy/ r,
+    owner /var/log/caddy/ kwr,
+    owner /var/log/caddy/** kwrml,
+    
+    owner /data/config/caddy/ kwr,
+    owner /data/config/caddy/** kwrml,
   }
 }

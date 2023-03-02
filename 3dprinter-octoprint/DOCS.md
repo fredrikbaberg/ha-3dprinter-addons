@@ -1,6 +1,6 @@
 # Startup
 
-Set a network port in addon settings, to be able to access the WebUI.
+Set a network port in addon settings to be able to access the WebUI.
 
 # Addon configuration
 
@@ -28,7 +28,7 @@ Note that this method **only allows for snapshot**, it does **NOT** work for cam
 
 # Ingress?
 
-This addon drops support for Ingress. The main reason for this is issues with finding a working configuration.
+This add-on drops support for Ingress. The main reason for this is issues with finding a working configuration.
 
 * An update to OctoPrint increased the security (which is good!). Unfortunately it also broke the configuration used in this addon, most likely due to this addon not behaving properly.
 * There has been issues with accessing camera stream by Ingress since I added support for it, which I have not been able to solve.
