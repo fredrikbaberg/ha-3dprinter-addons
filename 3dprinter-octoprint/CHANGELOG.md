@@ -1,3 +1,7 @@
+## 2023.03.0
+  * Mark 3DPrinter-OctoPrint stable
+  * Set realtime flag
+
 ## 2023.02.0
   * Add binaries for flashing firmware to printer (avrdude, dfu-util, dfu-programmer, stm32flash).
 
