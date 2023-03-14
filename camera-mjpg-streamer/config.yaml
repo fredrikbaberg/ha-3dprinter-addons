@@ -13,7 +13,7 @@ arch:
     - armhf
     - aarch64
     - i386
-stage: experimental
+# stage: experimental
 init: false
 video: true
 usb: true
