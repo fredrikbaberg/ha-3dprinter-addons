@@ -32,7 +32,7 @@ schema:
   trusted_proxies: "str?"
   # camera_url: "url?"
   # mode: "list(normal|recovery|reverse_proxy_test|camera)?"
-# image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-octoprint-{arch}
+image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-octoprint-{arch}
 # codenotary:
 tmpfs: true
 # ingress: false
