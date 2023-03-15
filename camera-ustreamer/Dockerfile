@@ -56,6 +56,9 @@ RUN mv janus/libjanus_ustreamer.so /opt/janus/lib/janus/plugins/libjanus_ustream
 FROM ${BUILD_FROM} AS final
 ENV LANG C.UTF-8
 
+COPY --from=builder /opt/janus /opt/janus
+COPY --from=builder /usr/local/bin/ustreamer /usr/local/bin/ustreamer
+
 RUN apk add -U \
     alsa-lib \
     curl \
@@ -79,9 +82,6 @@ RUN apk add -U \
     speexdsp \
     zlib \
     caddy
-
-COPY --from=builder /opt/janus /opt/janus
-COPY --from=builder /usr/local/bin/ustreamer /usr/local/bin/ustreamer
 
 COPY rootfs/ /
 
