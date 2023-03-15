@@ -1,4 +1,12 @@
-localhost
+# Ingress
+:8099 {
+    @blocked not remote_ip 172.30.32.2
+    respond @blocked "This is only for access through Ingress" 403
+    reverse_proxy 127.0.0.1:8080
+}
 
-root * /server
-file_server
+# External access
+:8080 {
+    root * /opt/janus/share/janus/demos
+    file_server
+}

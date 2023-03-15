@@ -1,11 +1,8 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Add-on: mjpg-streamer
-# Runs the Nginx daemon
+# Add-on: camera-ustreamer
+# Runs the proxy daemon
 # ==============================================================================
 
-# Wait for aiortc web server to be available
-bashio::net.wait_for 80
-
 bashio::log.info "Starting proxy..."
-# exec caddy run -config /etc/caddy/Caddyfile
+exec caddy run -config /etc/caddy/Caddyfile
