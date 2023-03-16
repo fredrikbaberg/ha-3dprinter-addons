@@ -81,12 +81,14 @@ RUN apk add -U \
     opus \
     speexdsp \
     zlib \
-    caddy
+    caddy \
+    vim \
+    screen
 
 COPY rootfs/ /
 
 WORKDIR /
 
 # # Make files executable
-# # RUN chmod +x /etc/cont-init.d/*.sh
-# # RUN chmod +x /etc/services.d/*/*
+# RUN chmod +x /etc/cont-init.d/*.sh
+# RUN chmod +x /etc/services.d/*/*
