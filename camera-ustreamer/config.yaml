@@ -25,4 +25,4 @@ ports_description:
 #     mjpg_input: "input_uvc.so -n"
 # schema:
 #     mjpg_input: "str"
-# image: ghcr.io/fredrikbaberg/ha-addon-camera-ustreamer-{arch}
+image: ghcr.io/fredrikbaberg/ha-addon-camera-ustreamer-{arch}
