@@ -1,5 +1,5 @@
 name: "Camera-ustreamer"
-version: "2023.3.0-rc0"
+version: "2023.3.0-rc1"
 slug: "camera-ustreamer"
 description: "Camera streaming addon for Home Assistant, based on ustreamer."
 url: "https://github.com/fredrikbaberg/ha-3dprinter-addons/tree/main/camera-ustreamer"
