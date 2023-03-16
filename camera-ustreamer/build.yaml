@@ -1,7 +1,0 @@
-labels:
-  org.opencontainers.image.title: "Home Assistant Add-on: Camera-ustreamer"
-  org.opencontainers.image.description: "ustreamer addon for Home-Assistant."
-  org.opencontainers.image.source: "https://github.com/fredrikbaberg/ha-3dprinter-addons"
-args:
-  JANUS_GATEWAY_VERSION: "1.1.3"
-  USTREAMER_VERSION: "5.38"
