@@ -31,7 +31,7 @@
     // Establish a WebSockets connection to the server.
     const janus = new Janus({
       // Specify the URL of the Janus server’s WebSockets endpoint.
-      server: `ws://${window.location.hostname}:8188/`,
+      server: `ws://${window.location.hostname}/janus/`,
 
       // Callback function if the client connects successfully.
       success: attachUStreamerPlugin,

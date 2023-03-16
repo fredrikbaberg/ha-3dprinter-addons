@@ -87,6 +87,8 @@ RUN apk add -U \
 
 COPY rootfs/ /
 
+RUN cp /opt/janus/share/janus/javascript/janus.js /server
+
 WORKDIR /
 
 # Make files executable
