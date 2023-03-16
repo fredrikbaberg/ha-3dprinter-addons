@@ -1,12 +1,18 @@
 # Ingress
 :8099 {
-    @blocked not remote_ip 172.30.32.2
-    respond @blocked "This is only for access through Ingress" 403
-    reverse_proxy 127.0.0.1:8080
+	# @blocked not remote_ip 172.30.32.2
+	# respond @blocked "This is only for access through Ingress" 403
+	handle_path /janus/* {
+		reverse_proxy localhost:8188 # Janus API
+	}
+	reverse_proxy 127.0.0.1:8080 # ustreamer
 }
 
 # External access
-:8080 {
-    root * /opt/janus/share/janus/demos
-    file_server
+:80 {
+	root * /opt/janus/share/janus/demos
+	handle_path /janus/* {
+		reverse_proxy localhost:8188 # Janus API
+	}
+	file_server # Janus demo
 }
