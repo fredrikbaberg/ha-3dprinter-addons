@@ -89,6 +89,6 @@ COPY rootfs/ /
 
 WORKDIR /
 
-# # Make files executable
-# RUN chmod +x /etc/cont-init.d/*.sh
-# RUN chmod +x /etc/services.d/*/*
+# Make files executable
+RUN chmod +x /etc/cont-init.d/*.sh
+RUN chmod +x /etc/services.d/*/*
