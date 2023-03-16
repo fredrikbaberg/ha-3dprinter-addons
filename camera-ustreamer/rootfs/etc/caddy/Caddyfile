@@ -10,7 +10,8 @@
 
 # External access
 :80 {
-	root * /opt/janus/share/janus/demos
+	# root * /opt/janus/share/janus/demos
+	root * /server
 	handle_path /janus/* {
 		reverse_proxy localhost:8188 # Janus API
 	}
