@@ -28,6 +28,7 @@ RUN apt update \
         python3-wheel \
         build-essential \
         caddy \
+        libffi-dev \
         # Extras.
         ffmpeg \
         avrdude \
@@ -44,3 +45,7 @@ COPY rootfs /
 RUN chmod +x /etc/cont-init.d/*.sh
 RUN chmod +x /etc/services.d/*/*
 RUN chmod +x /scripts/*.sh
+
+# # Test install, verify that install will be possible.
+# RUN sed 's/#!/# #!/' /etc/cont-init.d/octoprint.sh > /tmp/octoprint.sh 
+# # RUN bash /tmp/octoprint.sh
