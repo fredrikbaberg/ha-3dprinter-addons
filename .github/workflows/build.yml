@@ -28,7 +28,7 @@ jobs:
       - name: Get changed files
         id: changed_files
         # uses: jitterbit/get-changed-files@v1
-        uses: masesgroup/retrieve-changed-files@v2
+        uses: masesgroup/retrieve-changed-files@v3
         with:
           format: 'space-delimited'
 
