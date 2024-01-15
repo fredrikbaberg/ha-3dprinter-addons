@@ -1,5 +1,5 @@
 name: "3DPrinter-Remote"
-version: "2023.03.0"
+version: "2024.01.0"
 slug: "3dprinter-remote"
 description: "Add-on for accessing 3DPrinter remotely using socat"
 url: "https://github.com/fredrikbaberg/ha-3dprinter-addons/tree/main/3dprinter-remote"
