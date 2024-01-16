@@ -10,6 +10,7 @@ export BASEDIR="--basedir /data/config/octoprint"
 } || { # Otherwise install it.
     { # Check if Python is available (at `/data/python/octoprint`, set by PATH in Dockerfile)
         python --version
+        python -m ensurepip
     } || { # Otherwise create Python virtual environment.
         python3 -m venv /data/python/octoprint
         # Install wheel to speed up future installs.
