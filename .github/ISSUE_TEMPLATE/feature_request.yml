@@ -16,6 +16,7 @@ body:
       options:
         - Other
         - 3DPrinter-OctoPrint
+        - 3DPrinter-Remote
         - Camera-mjpg-streamer
 
   - type: textarea
