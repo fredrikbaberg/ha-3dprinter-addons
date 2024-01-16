@@ -1,4 +1,4 @@
-name: camera-ustreamer manual build
+name: camera-mjpg-streamer - manual build
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ jobs:
     name: Build ${{ matrix.arch }} ${{ matrix.addon }} add-on
     strategy:
       matrix:
-        addon: ["camera-ustreamer"]
+        addon: ["camera-mjpg-streamer"]
         arch: ["aarch64", "amd64", "armhf", "armv7", "i386"]
     steps:
       - name: Check out the repository
