@@ -1,6 +1,6 @@
 ---
 # yamllint disable rule:line-length rule:truthy
-name: Build add-on
+name: Build add-on(s)
 
 env:
   BUILD_ARGS: "--test"

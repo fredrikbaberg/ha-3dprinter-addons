@@ -27,6 +27,7 @@ body:
       label: Which add-on are you reporting an issue with?
       options:
         - 3DPrinter-OctoPrint
+        - 3DPrinter-Remote
         - Camera-mjpg-streamer
 
   - type: input

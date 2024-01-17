@@ -1,3 +1,9 @@
+## 2024.01.1
+
+  * Maintenance release:
+    * Update base image.
+    * Update default OctoPrint version to 1.9.3.
+
 ## 2023.03.1
   * Add check that OctoPrint can install at buildtime.
   * Add missing dependency for armhf (libffi-dev)
