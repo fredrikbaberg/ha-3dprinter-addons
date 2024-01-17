@@ -1,7 +1,7 @@
-## 2024.01.0
+## 2024.01.1
 
   * Maintenance release:
-    * Upgrade base image to Bookworm.
+    * Upgrade base image.
     * Upgrade default OctoPrint version to 1.9.3.
 
 ## 2023.03.1
