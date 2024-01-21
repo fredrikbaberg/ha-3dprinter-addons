@@ -5,6 +5,7 @@
 	{{ if .camera_url }}
 	handle_path /camera* {
 		reverse_proxy {{ .camera_url }} {
+			trusted_proxies {{ .trusted_proxies }}
 			flush_interval -1
 		}
 	}
