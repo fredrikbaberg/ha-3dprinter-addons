@@ -1,3 +1,6 @@
+## 2024.01.2
+  * Add option to pass webcam URL to proxy.
+
 ## 2024.01.1
 
   * Maintenance release:
