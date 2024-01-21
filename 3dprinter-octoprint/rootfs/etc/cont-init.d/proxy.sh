@@ -9,6 +9,7 @@ bashio::var.json \
     addon_hostname "$(bashio::addon.hostname)" \
     addon_ip "$(bashio::addon.ip_address)" \
     trusted_proxies "$(bashio::config 'trusted_proxies')" \
+    camera_url "$(bashio::config 'camera_url')" \
     | tempio \
         -template /usr/share/tempio/caddy/Caddyfile.internal_external.gtpl \
         -out /etc/caddy/sites-enabled/internal_external.caddy

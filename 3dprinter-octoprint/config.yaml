@@ -26,11 +26,11 @@ usb: true
 uart: true
 options:
   trusted_proxies: ""
-  # camera_url: "http://b7aa59c4-camera-mjpg-streamer"
+  camera_url: ""
   # mode: normal
 schema:
   trusted_proxies: "str?"
-  # camera_url: "url?"
+  camera_url: "url?"
   # mode: "list(normal|recovery|reverse_proxy_test|camera)?"
 image: ghcr.io/fredrikbaberg/ha-addon-3dprinter-octoprint-{arch}
 # codenotary:
