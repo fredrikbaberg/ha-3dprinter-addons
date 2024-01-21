@@ -9,3 +9,4 @@ On the machine connected to the printer (`remote machine`):
 
 On the machine with OctoPrint:
 * Go to Settings --> Serial Connection, section __Additional serial ports__. Add : `socket://<remote machine>:9999`. For example, use the IP for `remote machine`.
+* Install plugin [OctoPrint-Network-Printing](https://github.com/hellerbarde/OctoPrint-Network-Printing)
