@@ -1,8 +1,0 @@
-#!/usr/bin/with-contenv bashio
-# ==============================================================================
-# Add-on: camera-ustreamer
-# Runs the proxy daemon
-# ==============================================================================
-
-bashio::log.info "Starting proxy..."
-exec caddy run -config /etc/caddy/Caddyfile
