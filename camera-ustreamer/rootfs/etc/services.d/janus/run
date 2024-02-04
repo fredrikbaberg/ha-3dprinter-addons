@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bashio
-# ==============================================================================
-# Add-on: camera-ustreamer
-# Runs janus
-# ==============================================================================
-
-bashio::log.info "Starting janus.."
-
-exec /opt/janus/bin/janus --configs-folder /opt/janus/etc/janus/ --plugins-folder /opt/janus/lib/janus/plugins/
