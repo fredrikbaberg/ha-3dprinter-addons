@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: 3dprinter-Klipper
+# Runs Klippy
+# ==============================================================================
+
+bashio::log.info "Starting Klippy..."
+
+## Run your program
+exec "$KLIPPER_VENV_PATH"/bin/python "$KLIPPER_PATH"/klippy/klippy.py "$ADDON_CONFIG_PATH"/moonraker/config/printer.cfg -a /tmp/klippy_uds -l "$ADDON_CONFIG_PATH"/moonraker/logs/klippy.log

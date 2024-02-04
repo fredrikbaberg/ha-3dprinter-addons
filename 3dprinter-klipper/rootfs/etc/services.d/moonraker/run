@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: 3dprinter-Klipper
+# Runs Moonraker
+# ==============================================================================
+
+bashio::log.info "Starting Moonraker..."
+
+## Run your program
+exec "$MOONRAKER_VENV_PATH"/bin/python "$MOONRAKER_PATH"/moonraker/moonraker.py -d "$ADDON_CONFIG_PATH"/moonraker

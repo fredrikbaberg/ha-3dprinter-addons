@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Add-on: 3dprinter-octoprint
+# Runs the reverse proxy.
+# ==============================================================================
+
+bashio::log.info "Starting proxy..."
+
+exec caddy run --config /etc/caddy/Caddyfile --envfile /etc/caddy/env
