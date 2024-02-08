@@ -11,6 +11,8 @@ bashio::var.json \
     trusted_proxies "$(bashio::config 'trusted_proxies')" \
     camera_url "$(bashio::config 'camera_url')" \
     ingress_port "^$(bashio::addon.ingress_port)" \
+    fluidd_src "$ADDON_SRC_PATH/fluidd" \
+    mainsail_src "$ADDON_SRC_PATH/mainsail" \
     | tempio \
         -template /usr/share/tempio/caddy/Caddyfile.gtpl \
         -out /etc/caddy/sites-enabled/moonraker.caddy

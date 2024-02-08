@@ -6,5 +6,14 @@
 
 bashio::log.info "Starting Klippy..."
 
+
+if bashio::config.true 'host_mcu'; then
+    while [ ! -e /tmp/klipper_host_mcu ]
+    do
+        bashio::log "Wait for klipper_host_mcu"
+        sleep 5
+    done
+fi
+
 ## Run your program
-exec "$KLIPPER_VENV_PATH"/bin/python "$KLIPPER_PATH"/klippy/klippy.py "$ADDON_CONFIG_PATH"/moonraker/config/printer.cfg -a /tmp/klippy_uds -l "$ADDON_CONFIG_PATH"/moonraker/logs/klippy.log
+exec "$ADDON_VENV_PATH"/klipper/bin/python "$ADDON_SRC_PATH"/klipper/klippy/klippy.py "$ADDON_CONFIG_PATH"/moonraker/config/printer.cfg -a /tmp/klippy_uds -l "$ADDON_CONFIG_PATH"/moonraker/logs/klippy.log

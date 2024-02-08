@@ -1,20 +1,29 @@
 #!/usr/bin/with-contenv bashio
 
-# Install Moonraker
-if [ ! -d "$MOONRAKER_PATH" ]; then
-    echo "Get Moonraker source"
-    git clone https://github.com/Arksine/moonraker.git "$MOONRAKER_PATH" --depth 1
-fi
-if [ ! -d "$MOONRAKER_VENV_PATH" ]; then
-    echo "Prepare Moonraker-env"
-    virtualenv "$MOONRAKER_VENV_PATH"
-    "$MOONRAKER_VENV_PATH"/bin/python -m pip install --upgrade pip
-    "$MOONRAKER_VENV_PATH"/bin/pip install -r "$MOONRAKER_PATH"/scripts/moonraker-requirements.txt
-    "$MOONRAKER_VENV_PATH"/bin/pip install msgspec uvloop
-fi
+SRC_PATH=$ADDON_SRC_PATH/moonraker
+VENV_PATH=$ADDON_VENV_PATH/moonraker
+CONFIG_PATH=$ADDON_CONFIG_PATH/moonraker/config
 
+# Get Moonraker source.
+if [ ! -d "$SRC_PATH" ]; then
+    bashio::log "Get Moonraker source"
+    git clone https://github.com/Arksine/moonraker.git "$SRC_PATH"
+fi
+# Install Moonraker in virtual environment.
+if [ ! -d "$VENV_PATH" ]; then
+    bashio::log "Prepare Moonraker-env"
+    virtualenv "$VENV_PATH"
+    "$VENV_PATH"/bin/python -m pip install --upgrade pip
+    "$VENV_PATH"/bin/pip install -r "$SRC_PATH"/scripts/moonraker-requirements.txt
+    "$VENV_PATH"/bin/pip install msgspec uvloop
+else
+    bashio::log "Moonraker env already installed"
+fi
 # Make sure config exists.
-if [ ! -f "$ADDON_CONFIG_PATH"/moonraker/config/moonraker.conf ]; then
-    mkdir -p "$ADDON_CONFIG_PATH"/moonraker/config
-    cp /etc/klipper/moonraker.conf "$ADDON_CONFIG_PATH"/moonraker/config/moonraker.conf
+if [ ! -f "$CONFIG_PATH"/moonraker.conf ]; then
+    mkdir -p "$CONFIG_PATH"
+    cp /etc/klipper/config/moonraker.conf "$CONFIG_PATH"/moonraker.conf
+    ## Create log folder and file
+    mkdir -p $ADDON_CONFIG_PATH/moonraker/logs
+    touch $ADDON_CONFIG_PATH/moonraker/logs/moonraker.log
 fi

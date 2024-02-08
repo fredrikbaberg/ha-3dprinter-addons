@@ -7,5 +7,5 @@
 bashio::log.info "Starting SimulAVR MCU..."
 
 ## Run your program
-export PYTHONPATH="$SIMULAVR_PATH"/build/pysimulavr/
-exec "$KLIPPER_PATH"/scripts/avrsim.py "$ADDON_CONFIG_PATH"/bin/klipper_mcu_simulavr.elf
+export PYTHONPATH=$ADDON_SRC_PATH/simulavr/build/pysimulavr
+exec "$ADDON_SRC_PATH"/klipper/scripts/avrsim.py "$ADDON_CONFIG_PATH"/bin/klipper_mcu_simulavr.elf

@@ -1,7 +1,7 @@
 name: "3DPrinter-Klipper"
 version: "2024.2.0"
 slug: "3dprinter-klipper"
-description: "Klipper with Moonraker as an addon, bring your own frontend."
+description: "Klipper with Moonraker and frontend(s) as an addon."
 arch:
   - armv7
   - amd64
@@ -12,14 +12,20 @@ ingress: true
 webui: http://[HOST]:[PORT:7125]
 ports:
   7125/tcp: null
+  7130/tcp: null
 ports_description:
   7125/tcp: Moonraker
+  7130/tcp: Fluidd
 map:
   - addon_config:rw
+gpio: true
 usb: true
+uart: true
 options:
+  host_mcu: false
   simulavr: false
 schema:
+  host_mcu: "bool?"
   simulavr: "bool?"
 panel_icon: mdi:printer-3d
 panel_title: 3DPrinter-Klipper

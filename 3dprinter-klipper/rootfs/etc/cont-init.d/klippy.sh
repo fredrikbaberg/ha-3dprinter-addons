@@ -1,33 +1,46 @@
 #!/usr/bin/with-contenv bashio
 
-# Install Klipper
-if [ ! -d "$KLIPPER_PATH" ]; then
-    echo "Get Klipper source"
-    git clone https://github.com/Klipper3d/klipper "$KLIPPER_PATH" --depth 1
+SRC_PATH=$ADDON_SRC_PATH/klipper
+VENV_PATH=$ADDON_VENV_PATH/klipper
+CONFIG_PATH=$ADDON_CONFIG_PATH/moonraker/config
+
+# Get Klipper source.
+if [ ! -d "$SRC_PATH" ]; then
+    bashio::log "Get Klipper source"
+    git clone https://github.com/Klipper3d/klipper "$SRC_PATH"
 else
     echo "Klipper already installed"
 fi
-if [ ! -d "$KLIPPER_VENV_PATH" ]; then
-    echo "Prepare Klippy-env"
-    virtualenv "$KLIPPER_VENV_PATH"
-    "$KLIPPER_VENV_PATH"/bin/python -m pip install --upgrade pip
-    "$KLIPPER_VENV_PATH"/bin/pip install -r "$KLIPPER_PATH"/scripts/klippy-requirements.txt
+# Install Klipper in virtual environment.
+if [ ! -d "$VENV_PATH" ]; then
+    bashio::log "Prepare Klippy-env"
+    virtualenv "$VENV_PATH"
+    "$VENV_PATH"/bin/python -m pip install --upgrade pip
+    "$VENV_PATH"/bin/pip install -r "$SRC_PATH"/scripts/klippy-requirements.txt
 else
-    echo "Klippy env already installed"
+    bashio::log "Klippy env already installed"
+fi
+# Make sure config file(s) exists.
+if [ ! -d "$CONFIG_PATH" ]; then
+    mkdir -p "$CONFIG_PATH"
+    cp -R /etc/klipper/config/* "$CONFIG_PATH"
+    ## Create log folder and file
+    mkdir -p $ADDON_CONFIG_PATH/moonraker/logs
+    touch $ADDON_CONFIG_PATH/moonraker/logs/klippy.log
 fi
 
-# Add host simulator process
-if [ ! -f "$ADDON_CONFIG_PATH"/bin/klipper_mcu_sim ]; then
-    mkdir -p "$ADDON_CONFIG_PATH"/bin/
-    cp /etc/klipper/config_host_simulator /data/klipper/.config
-    cd /data/klipper || exit
-    make
-    ./scripts/flash-linux.sh
-    cp /usr/local/bin/klipper_mcu "$ADDON_CONFIG_PATH"/bin/klipper_mcu_sim
-fi
-
-# Make sure config file exists.
-if [ ! -f "$ADDON_CONFIG_PATH"/moonraker/config/printer.cfg ]; then
-    mkdir -p "$ADDON_CONFIG_PATH"/moonraker/config
-    cp /etc/klipper/printer.cfg "$ADDON_CONFIG_PATH"/moonraker/config/printer.cfg
+# Build and add host process, if set.
+if bashio::config.true 'host_mcu'; then
+    bashio::log "Enable host process."
+    BIN_PATH=$ADDON_CONFIG_PATH/bin
+    if [ ! -f "$BIN_PATH"/klipper_mcu_host ]; then
+        mkdir -p "$BIN_PATH"
+        cp /etc/klipper/config_host_mcu "$SRC_PATH"/.config
+        cd "$SRC_PATH" || exit
+        make
+        cp out/klipper.elf "$BIN_PATH"/klipper_mcu_host
+    fi
+    rm -f /etc/services.d/klipper_host/down
+else
+    touch /etc/services.d/klipper_host/down
 fi

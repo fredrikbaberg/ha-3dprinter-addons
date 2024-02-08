@@ -6,5 +6,9 @@
 
 bashio::log.info "Starting Moonraker..."
 
+## Preparations, create log folder and file
+mkdir -p "$ADDON_CONFIG_PATH"/moonraker/logs
+touch "$ADDON_CONFIG_PATH"/moonraker/logs/moonraker.log
+
 ## Run your program
-exec "$MOONRAKER_VENV_PATH"/bin/python "$MOONRAKER_PATH"/moonraker/moonraker.py -d "$ADDON_CONFIG_PATH"/moonraker
+exec "$ADDON_VENV_PATH"/moonraker/bin/python "$ADDON_SRC_PATH"/moonraker/moonraker/moonraker.py -d "$ADDON_CONFIG_PATH"/moonraker -v
