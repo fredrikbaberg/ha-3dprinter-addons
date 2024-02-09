@@ -21,6 +21,7 @@ RUN apk add -U \
         g++ \
         python3-dev \
         make \
+        libgpiod \
         # AVR chip installation and building
         avrdude gcc-avr binutils-avr avr-libc \
         # ARM chip installation and building
