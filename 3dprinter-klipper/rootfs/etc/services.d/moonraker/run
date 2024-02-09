@@ -11,4 +11,4 @@ mkdir -p "$ADDON_CONFIG_PATH"/moonraker/logs
 touch "$ADDON_CONFIG_PATH"/moonraker/logs/moonraker.log
 
 ## Run your program
-exec "$ADDON_VENV_PATH"/moonraker/bin/python "$ADDON_SRC_PATH"/moonraker/moonraker/moonraker.py -d "$ADDON_CONFIG_PATH"/moonraker -v
+exec "$ADDON_VENV_PATH"/moonraker/bin/python "$ADDON_SRC_PATH"/moonraker/moonraker/moonraker.py -d "$ADDON_CONFIG_PATH"/moonraker
