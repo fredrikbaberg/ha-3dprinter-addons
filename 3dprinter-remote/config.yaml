@@ -9,7 +9,6 @@ arch:
     - armhf
     - aarch64
     - i386
-stage: experimental
 init: false
 gpio: true
 usb: true
