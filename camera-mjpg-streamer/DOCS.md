@@ -11,10 +11,10 @@ Set input arguments through `mjpg_input` configuration option, start the add-on.
 ## Accessing camera from Home Assistant
 
 The camera stream and snapshot can be accessed by e.g. [MJPEG IP Camera](https://www.home-assistant.io/integrations/mjpeg/), with URLs:
-* MJPEG URL: `http://<addon-hostname>/?action=stream`
-* Still image URL: `http://<addon-hostname>/?action=snapshot`.
+* MJPEG URL: `http://cce6f2d5-camera-mjpg-streamer/?action=stream`
+* Still image URL: `http://cce6f2d5-camera-mjpg-streamer/?action=snapshot`.
 
-Addon hostname can be found under [addon settings](https://my.home-assistant.io/redirect/supervisor_addon/?addon=b7aa59c4_camera-mjpg-streamer&repository_url=https%3A%2F%2Fgithub.com%2Ffredrikbaberg%2Fha-3dprinter-addons).
+Addon hostname can be found under [addon settings](https://my.home-assistant.io/redirect/supervisor_addon/?addon=cce6f2d5_camera-mjpg-streamer&repository_url=https%3A%2F%2Fgithub.com%2Ffredrikbaberg%2Fha-3dprinter-addons).
 
 ## Ingress?
 
