@@ -9,7 +9,7 @@ jobs:
     name: Cleanup packages
     steps:
       - name: Delete RC version of packages
-        uses: smartsquaregmbh/delete-old-packages@v0.7.0
+        uses: smartsquaregmbh/delete-old-packages@v0.8.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: fredrikbaberg
