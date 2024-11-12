@@ -1,3 +1,7 @@
+## 2024.11.0
+  * Remove AppArmor to make it run on HA Supervised
+  * Update default OctoPrint version to 1.10.3
+
 ## 2024.01.2
   * Add option to pass webcam URL to proxy.
 
