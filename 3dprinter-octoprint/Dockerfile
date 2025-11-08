@@ -1,6 +1,6 @@
-ARG BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:bullseye"
+ARG BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:trixie"
 FROM ${BUILD_FROM}
-ARG OCTOPRINT_VERSION="1.9.3"
+ARG OCTOPRINT_VERSION="1.11.4"
 
 # Setup path for persistent install of Python packages
 ENV PYTHONPATH=/data/python/octoprint
