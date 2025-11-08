@@ -1,4 +1,4 @@
-ARG BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:bullseye"
+ARG BUILD_FROM="ghcr.io/home-assistant/amd64-base-debian:trixie"
 FROM ${BUILD_FROM}
 ARG OCTOPRINT_VERSION="1.11.4"
 
