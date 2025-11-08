@@ -1,3 +1,7 @@
+## 2025.11.0
+  * Update base image to debian trixie
+  * Update default OctoPrint version to 1.11.4
+
 ## 2024.11.0
   * Remove AppArmor to make it run on HA Supervised
   * Update default OctoPrint version to 1.10.3
