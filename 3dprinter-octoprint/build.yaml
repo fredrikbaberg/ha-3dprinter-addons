@@ -8,4 +8,4 @@ labels:
   org.opencontainers.image.description: "3DPrinter-OctoPrint addon for Home-Assistant."
   org.opencontainers.image.source: "https://github.com/fredrikbaberg/ha-3dprinter-addons"
 args:
-  OCTOPRINT_VERSION: "1.10.3"
+  OCTOPRINT_VERSION: "1.11.4"
