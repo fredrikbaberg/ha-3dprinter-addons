@@ -1,6 +1,7 @@
 ## 2025.12.0
   * Update base image to debian trixie
   * Update default OctoPrint version to 1.11.4
+  * CI: drop support for armhf image builds
 
 ## 2024.11.0
   * Remove AppArmor to make it run on HA Supervised
