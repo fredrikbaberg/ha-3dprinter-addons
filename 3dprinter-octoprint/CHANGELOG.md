@@ -1,4 +1,4 @@
-## 2025.11.0
+## 2025.12.0
   * Update base image to debian trixie
   * Update default OctoPrint version to 1.11.4
 
